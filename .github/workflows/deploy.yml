@@ -30,6 +30,7 @@ jobs:
       - name: Prepare files for deployment
         run: |
           echo "Création des index.html..."
+          mkdir -p out/en
           cp out/fr.html out/index.html
           cp out/en.html out/en/index.html
           echo "Contenu du dossier out/:"
