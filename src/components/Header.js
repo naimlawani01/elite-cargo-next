@@ -12,7 +12,7 @@ const Header = () => {
   const { t } = useTranslation();
   const pathname = usePathname();
   const router = useRouter();
-  const currentLang = pathname.split('/')[1];
+  const currentLang = pathname.split('/')[1] || 'fr';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigationItems = [
@@ -22,11 +22,8 @@ const Header = () => {
   ];
 
   const handleNavigation = (id) => {
-    if (id === 'home') {
-      router.push(`/${currentLang}`);
-    } else {
-      router.push(`/${currentLang}/${id}`);
-    }
+    const newPath = id === 'home' ? `/${currentLang}` : `/${currentLang}/${id}`;
+    router.push(newPath);
     setIsMenuOpen(false);
   };
 
