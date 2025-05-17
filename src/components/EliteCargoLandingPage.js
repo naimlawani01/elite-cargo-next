@@ -726,12 +726,12 @@ export default function EliteCargoLandingPage() {
                   <div className="relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-300" />
                     <div className="relative bg-white rounded-xl p-6">
-                      <Phone className="h-8 w-8 text-[#007d6f]/80 mb-4" />
-                      <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                        {t('contact.phone')}
+                      <Phone className="h-6 w-6 text-[#007d6f]/80 mb-3" />
+                      <h4 className="text-base font-semibold text-gray-800 mb-1">
+                        {t('contact.phone.title')}
                       </h4>
-                      <p className="text-gray-500">
-                        {t('contact.phone')}
+                      <p className="text-sm text-gray-500">
+                        {t('contact.phone.value')}
                       </p>
                     </div>
                   </div>
@@ -744,12 +744,12 @@ export default function EliteCargoLandingPage() {
                   <div className="relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-300" />
                     <div className="relative bg-white rounded-xl p-6">
-                      <Mail className="h-8 w-8 text-[#007d6f]/80 mb-4" />
-                      <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                        {t('contact.email')}
+                      <Mail className="h-6 w-6 text-[#007d6f]/80 mb-3" />
+                      <h4 className="text-base font-semibold text-gray-800 mb-1">
+                        {t('contact.email.title')}
                       </h4>
-                      <p className="text-gray-500">
-                        {t('contact.email')}
+                      <p className="text-sm text-gray-500">
+                        {t('contact.email.value')}
                       </p>
                     </div>
                   </div>
@@ -763,12 +763,12 @@ export default function EliteCargoLandingPage() {
                 <div className="relative">
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-300" />
                   <div className="relative bg-white rounded-xl p-6">
-                    <MapPin className="h-8 w-8 text-[#007d6f]/80 mb-4" />
-                    <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                      {t('contact.address')}
+                    <MapPin className="h-6 w-6 text-[#007d6f]/80 mb-3" />
+                    <h4 className="text-base font-semibold text-gray-800 mb-1">
+                      {t('contact.address.title')}
                     </h4>
-                    <p className="text-gray-500">
-                      {t('contact.address')}
+                    <p className="text-sm text-gray-500">
+                      {t('contact.address.value')}
                     </p>
                   </div>
                 </div>
@@ -786,18 +786,18 @@ export default function EliteCargoLandingPage() {
               <div className="absolute -inset-4 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="relative bg-white rounded-2xl p-8 shadow-xl">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {t('contact.title')}
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {t('contact.form.title')}
                   </h3>
-                  <p className="text-gray-600 mb-8">
+                  <p className="text-sm text-gray-600 mb-6">
                     {t('contact.subtitle')}
                   </p>
                   <Link 
                     href={`/${currentLang}/contact`}
-                    className="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-[#007d6f] to-[#00a199] hover:from-[#006b5f] hover:to-[#008a84] transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-xl text-white bg-gradient-to-r from-[#007d6f] to-[#00a199] hover:from-[#006b5f] hover:to-[#008a84] transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
-                    {t('contact.title')}
-                    <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {t('contact.form.submit')}
+                    <svg className="ml-2 -mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
@@ -807,12 +807,6 @@ export default function EliteCargoLandingPage() {
           </div>
         </div>
       </section>
-
-      <footer className="text-center py-6 text-gray-500 text-sm">
-        {t('footer.rights')} <br />
-        {t('footer.madeBy')} <a href="https://imrane.tech" target="_blank" rel="noopener noreferrer" className="text-[#007d6f] font-semibold hover:underline">IMRANE TECH SOLUTIONS</a>
-      </footer>
-
       {/* Section transitions */}
       <style jsx global>{`
         section {

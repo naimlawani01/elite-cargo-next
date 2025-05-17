@@ -1,7 +1,13 @@
 import EliteCargoLandingPage from '../../components/EliteCargoLandingPage';
+import Footer from '@/components/Footer';
 
 export default function Page({ params: { lang } }) {
-  return <EliteCargoLandingPage />;
+  return (
+    <div>
+      <EliteCargoLandingPage />
+      <Footer />
+    </div>
+  );
 }
 
 export async function generateStaticParams() {

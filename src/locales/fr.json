@@ -11,7 +11,8 @@
     "team": "Équipe",
     "stats": "Chiffres",
     "partners": "Partenaires",
-    "contact": "Contact"
+    "contact": "Contact",
+    "home": "Accueil"
   },
   "about": {
     "title": "Qui sommes-nous ?",
@@ -81,7 +82,7 @@
     }
   },
   "branches": {
-    "title": "Nos Présences Régionales",
+    "title": "Nos branches",
     "guinea": {
       "country": "Guinée",
       "name": "Elite Cargo Guinée",
@@ -106,25 +107,46 @@
       "country": "Côte d'Ivoire",
       "name": "Elite Cargo",
       "note": "(Air Cargo Logistique et Services Sarl)"
+    },
+    "france": {
+      "country": "France",
+      "name": "Siège social",
+      "note": "Paris, France"
+    },
+    "morocco": {
+      "country": "Maroc",
+      "name": "Bureau régional",
+      "note": "Casablanca, Maroc"
     }
   },
   "partners": {
     "title": "Nos Partenaires & Réseaux"
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Contactez notre équipe pour toute question ou demande",
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos projets de transport et logistique.",
     "info": "Informations de contact",
-    "address": "Aérogare de fret de l'Aéroport Gbessia de Conakry (République de Guinée)",
-    "email": "info@elite-cargo.net",
-    "phone": "+224 622 65 25 11",
+    "address": {
+      "title": "Adresse",
+      "value": "Aérogare de fret de l'Aéroport Gbessia de Conakry (République de Guinée)"
+    },
+    "phone": {
+      "title": "Téléphone",
+      "value": "+224 622 65 25 11"
+    },
+    "email": {
+      "title": "Email",
+      "value": "contact@elite-cargo.net"
+    },
     "form": {
       "title": "Envoyez-nous un message",
       "name": "Nom",
       "email": "Email",
-      "subject": "Objet",
+      "subject": "Sujet",
       "message": "Message",
-      "submit": "Envoyer"
+      "submit": "Envoyer",
+      "success": "Message envoyé avec succès !",
+      "error": "Une erreur est survenue. Veuillez réessayer."
     }
   },
   "form": {
@@ -135,8 +157,8 @@
     "submit": "Envoyer"
   },
   "footer": {
-    "rights": "© 2025 Elite Cargo. Tous droits réservés.",
-    "madeBy": "Site réalisé par"
+    "rights": "© 2024 Elite Cargo. Tous droits réservés.",
+    "madeBy": "Créé par"
   },
   "gallery": {
     "title": "Notre Galerie",

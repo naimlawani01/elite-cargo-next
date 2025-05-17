@@ -5,6 +5,7 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Header from './Header';
 import Image from 'next/image';
+import Footer from './Footer';
 
 const Gallery = () => {
   const { t } = useTranslation();
@@ -270,10 +271,7 @@ const Gallery = () => {
         </div>
       </main>
 
-      <footer className="text-center py-8 text-gray-500 text-sm bg-white mt-auto">
-        {t('footer.rights')} <br />
-        {t('footer.madeBy')} <a href="https://imrane.tech" target="_blank" rel="noopener noreferrer" className="text-[#007d6f] font-semibold hover:underline">IMRANE TECH SOLUTIONS</a>
-      </footer>
+      <Footer />
 
       {/* Modal pour l'image sélectionnée */}
       <AnimatePresence>

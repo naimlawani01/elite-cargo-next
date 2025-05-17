@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Footer from '@/components/Footer';
 
 // Composant client qui gère l'interface utilisateur
 const ContactPage = ({ params }) => {
@@ -66,10 +67,10 @@ const ContactPage = ({ params }) => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-800">
-                            {t('contact.address')}
+                            {t('contact.address.title')}
                           </h3>
                           <p className="text-gray-500 mt-1">
-                            {t('contact.address')}
+                            {t('contact.address.value')}
                           </p>
                         </div>
                       </div>
@@ -80,10 +81,10 @@ const ContactPage = ({ params }) => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-800">
-                            {t('contact.phone')}
+                            {t('contact.phone.title')}
                           </h3>
                           <p className="text-gray-500 mt-1">
-                            {t('contact.phone')}
+                            {t('contact.phone.value')}
                           </p>
                         </div>
                       </div>
@@ -94,10 +95,10 @@ const ContactPage = ({ params }) => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-800">
-                            {t('contact.email')}
+                            {t('contact.email.title')}
                           </h3>
                           <p className="text-gray-500 mt-1">
-                            {t('contact.email')}
+                            {t('contact.email.value')}
                           </p>
                         </div>
                       </div>
@@ -168,6 +169,7 @@ const ContactPage = ({ params }) => {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 };

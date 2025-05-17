@@ -11,7 +11,8 @@
     "team": "Team",
     "stats": "Stats",
     "partners": "Partners",
-    "contact": "Contact"
+    "contact": "Contact",
+    "home": "Home"
   },
   "about": {
     "title": "Who are we?",
@@ -81,7 +82,17 @@
     }
   },
   "branches": {
-    "title": "Regional Presence",
+    "title": "Our Branches",
+    "france": {
+      "country": "France",
+      "name": "Headquarters",
+      "note": "Paris, France"
+    },
+    "morocco": {
+      "country": "Morocco",
+      "name": "Regional Office",
+      "note": "Casablanca, Morocco"
+    },
     "guinea": {
       "country": "Guinea",
       "name": "Elite Cargo Guinea",
@@ -112,19 +123,30 @@
     "title": "Our Partners & Networks"
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Get in touch with our team for any questions or requests",
+    "title": "Contact Us",
+    "subtitle": "We are at your disposal to answer all your questions and support you in your transport and logistics projects.",
     "info": "Contact Information",
-    "address": "Freight Terminal of Gbessia Airport, Conakry (Republic of Guinea)",
-    "email": "info@elite-cargo.net",
-    "phone": "+224 622 65 25 11",
+    "address": {
+      "title": "Address",
+      "value": "Cargo Terminal of Gbessia Airport, Conakry (Republic of Guinea)"
+    },
+    "phone": {
+      "title": "Phone",
+      "value": "+224 622 65 25 11"
+    },
+    "email": {
+      "title": "Email",
+      "value": "contact@elite-cargo.net"
+    },
     "form": {
       "title": "Send us a message",
       "name": "Name",
       "email": "Email",
       "subject": "Subject",
       "message": "Message",
-      "submit": "Send"
+      "submit": "Send",
+      "success": "Message sent successfully!",
+      "error": "An error occurred. Please try again."
     }
   },
   "form": {
@@ -135,8 +157,8 @@
     "submit": "Send"
   },
   "footer": {
-    "rights": "© 2025 Elite Cargo. All rights reserved.",
-    "madeBy": "Site made by"
+    "rights": "© 2024 Elite Cargo. All rights reserved.",
+    "madeBy": "Created by"
   },
   "gallery": {
     "title": "Our Gallery",
