@@ -33,6 +33,32 @@ jobs:
           mkdir -p out/en
           cp out/fr.html out/index.html
           cp out/en.html out/en/index.html
+          
+          echo "Création du fichier .htaccess..."
+          cat > out/.htaccess << 'EOL'
+          RewriteEngine On
+          RewriteBase /
+          
+          # Rediriger /en vers /en/
+          RewriteCond %{REQUEST_URI} ^/en$
+          RewriteRule ^(.*)$ $1/ [R=301,L]
+          
+          # Gérer les routes pour /en/
+          RewriteCond %{REQUEST_URI} ^/en/
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule ^en/(.*)$ /en/index.html [L]
+          
+          # Gérer les routes pour la racine
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule ^(.*)$ /index.html [L]
+          
+          # Forcer HTTPS
+          RewriteCond %{HTTPS} off
+          RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+          EOL
+          
           echo "Contenu du dossier out/:"
           ls -la out/
           echo "Structure des dossiers:"
