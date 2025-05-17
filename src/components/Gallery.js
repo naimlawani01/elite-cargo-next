@@ -136,37 +136,83 @@ const Gallery = () => {
           </div>
 
           {/* Galerie */}
-          <motion.div
-            key={currentCategory}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory"
-          >
-            {currentImages.map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative flex-none w-[400px] aspect-[4/3] overflow-hidden rounded-lg cursor-pointer shadow-md hover:shadow-lg transition-all duration-300 snap-center"
-                onClick={() => setSelectedImage(image)}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
-                  <div className="p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-white text-lg font-medium">{image.alt}</p>
-                    <span className="text-white/70 text-sm block mt-1">Cliquez pour agrandir</span>
+          <div className="relative">
+            {/* Bouton de navigation gauche */}
+            <button 
+              onClick={() => {
+                const container = document.querySelector('.gallery-container');
+                container.scrollBy({ left: -400, behavior: 'smooth' });
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center z-10 cursor-pointer hover:bg-white transition-colors hover:scale-110 active:scale-95"
+            >
+              <ChevronLeft className="w-6 h-6 text-[#007d6f]" />
+            </button>
+
+            <motion.div
+              key={currentCategory}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory gallery-container scroll-smooth"
+            >
+              {currentImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group relative flex-none w-[400px] aspect-[4/3] overflow-hidden rounded-lg cursor-pointer shadow-md hover:shadow-lg transition-all duration-300 snap-center"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
+                    <div className="p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-white text-lg font-medium">{image.alt}</p>
+                      <span className="text-white/70 text-sm block mt-1">Cliquez pour agrandir</span>
+                    </div>
                   </div>
-                </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Bouton de navigation droite */}
+            <button 
+              onClick={() => {
+                const container = document.querySelector('.gallery-container');
+                container.scrollBy({ left: 400, behavior: 'smooth' });
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center z-10 cursor-pointer hover:bg-white transition-colors hover:scale-110 active:scale-95"
+            >
+              <ChevronRight className="w-6 h-6 text-[#007d6f]" />
+            </button>
+
+            {/* Indicateur de défilement textuel avec animation */}
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-center mt-6 text-sm text-gray-500 flex items-center justify-center space-x-2"
+            >
+              <motion.div
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <ChevronLeft className="w-4 h-4" />
               </motion.div>
-            ))}
-          </motion.div>
+              <span className="font-medium">Faites défiler pour voir plus d'images</span>
+              <motion.div
+                animate={{ x: [0, -5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <ChevronRight className="w-4 h-4" />
+              </motion.div>
+            </motion.div>
+          </div>
 
           {/* Pagination */}
           {totalPages > 1 && (

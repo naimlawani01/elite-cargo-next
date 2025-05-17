@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import { Users, Plane, Truck, Warehouse, BadgeCheck, Clock, Globe, Network, ShieldCheck, Zap, Phone, MapPin, Mail } from "lucide-react";
+import { Users, Plane, Truck, Warehouse, BadgeCheck, Clock, Globe, Network, ShieldCheck, Zap, Phone, MapPin, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 import Header from './Header';
@@ -461,8 +461,22 @@ export default function EliteCargoLandingPage() {
           
           {/* Conteneur de défilement horizontal */}
           <div className="relative">
+            {/* Indicateur de défilement à gauche */}
+            <button 
+              onClick={() => {
+                const container = document.querySelector('.branches-container');
+                container.scrollBy({ left: -400, behavior: 'smooth' });
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center z-10 cursor-pointer hover:bg-white transition-colors hover:scale-110 active:scale-95"
+            >
+              <ChevronLeft className="w-6 h-6 text-[#007d6f]" />
+            </button>
+
             {/* Masque de défilement */}
-            <div className="overflow-x-auto pb-8 -mx-6 px-6 scrollbar-hide">
+            <div className="overflow-x-auto pb-8 -mx-6 px-6 scrollbar-hide scroll-smooth branches-container">
+              {/* Indicateur de défilement en bas */}
+              <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none" />
+              
               {/* Grille des filiales */}
               <div className="flex gap-8 min-w-max">
                 {branches.map((branch, index) => (
@@ -511,9 +525,42 @@ export default function EliteCargoLandingPage() {
               </div>
             </div>
 
-            {/* Indicateur de défilement */}
+            {/* Indicateur de défilement à droite */}
+            <button 
+              onClick={() => {
+                const container = document.querySelector('.branches-container');
+                container.scrollBy({ left: 400, behavior: 'smooth' });
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center z-10 cursor-pointer hover:bg-white transition-colors hover:scale-110 active:scale-95"
+            >
+              <ChevronRight className="w-6 h-6 text-[#007d6f]" />
+            </button>
+
+            {/* Indicateur de défilement en bas */}
             <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none" />
           </div>
+
+          {/* Indicateur de défilement textuel avec animation */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="text-center mt-6 text-sm text-gray-500 flex items-center justify-center space-x-2"
+          >
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </motion.div>
+            <span className="font-medium">Faites défiler pour découvrir nos branches</span>
+            <motion.div
+              animate={{ x: [0, -5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ChevronRight className="w-4 h-4" />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
