@@ -31,6 +31,8 @@ jobs:
         run: |
           echo "Contenu du dossier out/:"
           ls -la out/
+          echo "Structure des dossiers:"
+          find out/ -type f
 
       - name: Install LFTP
         run: sudo apt-get install -y lftp
@@ -42,6 +44,9 @@ jobs:
             set ftp:use-feat false;
             set net:max-retries 3;
             set net:timeout 30s;
+            set mirror:parallel-directories true;
+            set mirror:parallel-transfer-count 4;
+            set mirror:parallel-chunk-size 1M;
             open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ftp://${{ secrets.FTP_SERVER }}:21;
-            mirror --reverse --verbose --ignore-time ./out/ ${{ secrets.FTP_SERVER_DIR }}/
+            mirror --reverse --verbose=3 --ignore-time --parallel=4 --only-newer ./out/ ${{ secrets.FTP_SERVER_DIR }}/
           " 
