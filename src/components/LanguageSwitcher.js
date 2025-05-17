@@ -15,7 +15,12 @@ export default function LanguageSwitcher() {
     const lang = pathname.split('/')[1] || 'fr';
     setCurrentLang(lang);
     i18n.changeLanguage(lang);
-  }, [pathname, i18n]);
+    
+    // Si la langue n'est pas française, rediriger vers le français
+    if (lang !== 'fr' && pathname === '/') {
+      router.push('/fr');
+    }
+  }, [pathname, i18n, router]);
 
   const changeLanguage = (lng) => {
     // Changer la langue dans i18n

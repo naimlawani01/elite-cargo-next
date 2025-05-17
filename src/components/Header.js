@@ -30,15 +30,15 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-lg shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <header className="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-lg shadow-lg overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo and Title */}
-          <Link href={`/${currentLang}`} className="flex items-center space-x-3">
-            <img src="/images/elite.svg" alt="Elite Cargo" className="h-10 w-auto" />
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-[#007d6f]">Elite Cargo</span>
-              <span className="text-xs text-gray-500">Transport & Logistique</span>
+          <Link href={`/${currentLang}`} className="flex items-center space-x-3 min-w-0">
+            <img src="/images/elite.svg" alt="Elite Cargo" className="h-10 w-auto flex-shrink-0" />
+            <div className="flex flex-col min-w-0">
+              <span className="text-xl font-bold text-[#007d6f] truncate">Elite Cargo</span>
+              <span className="text-xs text-gray-500 truncate">Transport & Logistique</span>
             </div>
           </Link>
 
@@ -48,7 +48,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors whitespace-nowrap
                   ${(item.id === 'home' ? pathname === `/${currentLang}` : pathname === `/${currentLang}/${item.id}`)
                     ? 'text-[#007d6f] font-bold' 
                     : 'text-gray-700 hover:text-[#007d6f]'
@@ -62,13 +62,13 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-gray-700 hover:text-[#007d6f] transition-colors"
+            className="md:hidden p-2 text-gray-700 hover:text-[#007d6f] transition-colors flex-shrink-0"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
           {/* Language Switcher */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-6 flex-shrink-0">
             <LanguageSwitcher />
           </div>
         </div>
@@ -83,7 +83,7 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t"
           >
-            <div className="px-6 py-4 space-y-4">
+            <div className="px-4 sm:px-6 py-4 space-y-4">
               {navigationItems.map((item) => (
                 <button
                   key={item.id}

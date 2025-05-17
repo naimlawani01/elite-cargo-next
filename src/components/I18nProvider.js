@@ -8,9 +8,12 @@ export default function I18nProvider({ children }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Récupérer la langue sauvegardée ou utiliser le français par défaut
+    // Forcer le français comme langue par défaut
     const savedLanguage = localStorage.getItem('language') || 'fr';
-    i18n.changeLanguage(savedLanguage);
+    if (savedLanguage !== 'fr') {
+      localStorage.setItem('language', 'fr');
+    }
+    i18n.changeLanguage('fr');
     setMounted(true);
   }, []);
 
