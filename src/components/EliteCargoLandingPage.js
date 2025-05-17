@@ -3,38 +3,16 @@ import React, { useState } from "react";
 import { Users, Plane, Truck, Warehouse, BadgeCheck, Clock, Globe, Network, ShieldCheck, Zap, Phone, MapPin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from './LanguageSwitcher';
+import Header from './Header';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function EliteCargoLandingPage() {
   const { t } = useTranslation();
   const [formStatus, setFormStatus] = useState(null);
+  const pathname = usePathname();
+  const currentLang = pathname.split('/')[1];
 
-  const handleSubmit = async (e) => {
-    setFormStatus(t('form.sending'));
-    e.preventDefault();
-    const form = e.target;
-    const data = {
-      nom: form.nom.value,
-      email: form.email.value,
-      objet: form.objet.value,
-      message: form.message.value
-    };
-    try {
-      const res = await fetch("https://cargo-elite.onrender.com/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-      const result = await res.json();
-      setFormStatus(result.success ? t('form.success') : t('form.error'));
-      if (result.success) form.reset();
-      setTimeout(() => setFormStatus(null), 5000);
-    } catch (err) {
-      console.error(err);
-      setFormStatus(t('form.serverError'));
-      setTimeout(() => setFormStatus(null), 5000);
-    }
-  };
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
@@ -170,40 +148,7 @@ export default function EliteCargoLandingPage() {
 
   return (
     <main className="min-h-screen bg-white text-gray-800 font-sans">
-      {/* Fixed Navigation */}
-      <header className="sticky top-0 w-full z-50 px-6 md:px-12 py-6 flex justify-between items-center bg-white/95 backdrop-blur-lg shadow-lg">
-        <div className="flex items-center gap-4">
-          <img src="/images/elite.svg" alt="Elite Cargo" className="h-10 w-auto" />
-          <div className="flex flex-col">
-            <span className="text-xl font-bold text-[#007d6f] tracking-tight">Elite Cargo</span>
-            <span className="text-xs text-gray-500">Transport & Logistique</span>
-          </div>
-        </div>
-        <div className="flex items-center gap-10">
-          <nav className="hidden md:flex space-x-10 text-sm font-medium">
-            {['about', 'services', 'team', 'stats', 'partners', 'contact'].map((item) => (
-              <a 
-                key={item}
-                href={`#${item}`} 
-                className="text-gray-700 hover:text-[#007d6f] transition-colors duration-300 relative group py-2"
-              >
-                {t(`nav.${item}`)}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#007d6f] to-[#00a199] group-hover:w-full transition-all duration-300" />
-              </a>
-            ))}
-          </nav>
-          <div className="flex items-center gap-4">
-            <a 
-              href="#contact" 
-              className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-[#007d6f] text-white rounded-lg hover:bg-[#005f52] transition-all duration-300 text-sm font-medium"
-            >
-              <Phone className="w-4 h-4" />
-              {t('contact.phone')}
-            </a>
-            <LanguageSwitcher />
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero amélioré */}
       <section className="relative h-screen text-white">
@@ -651,7 +596,7 @@ export default function EliteCargoLandingPage() {
         </div>
       </section>
       {/* Partenaires modernisés */}
-      <section id="certifications" className="py-24 px-6 bg-gradient-to-b from-white to-gray-50">
+      <section id="partners" className="py-24 px-6 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto">
           <SectionTitle>{t('partners.title')}</SectionTitle>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
@@ -690,116 +635,129 @@ export default function EliteCargoLandingPage() {
         </div>
       </section>
 
-      {/* Contact section */}
-      <section id="contact" className="py-24 px-6 bg-[#f9fafb]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <SectionTitle>{t('contact.title')}</SectionTitle>
-            <div className="space-y-6 text-gray-700">
-              <p className="flex items-start gap-3 group">
-                <div className="p-2 bg-[#007d6f]/10 rounded-lg group-hover:bg-[#007d6f]/20 transition-colors duration-300">
-                  <MapPin className="w-5 h-5 text-[#007d6f]" />
-                </div>
-                <span className="mt-1">{t('contact.address')}</span>
-              </p>
-              <p className="flex items-center gap-3 group">
-                <div className="p-2 bg-[#007d6f]/10 rounded-lg group-hover:bg-[#007d6f]/20 transition-colors duration-300">
-                  <Mail className="w-5 h-5 text-[#007d6f]" />
-                </div>
-                <span>{t('contact.email')}</span>
-              </p>
-              <p className="flex items-center gap-3 group">
-                <div className="p-2 bg-[#007d6f]/10 rounded-lg group-hover:bg-[#007d6f]/20 transition-colors duration-300">
-                  <Phone className="w-5 h-5 text-[#007d6f]" />
-                </div>
-                <span>{t('contact.phone')}</span>
-              </p>
-            </div>
-          </div>
+      {/* Contact Section */}
+      <section id="contact" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#007d6f]/5 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00a199]/5 rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2" />
 
-          <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-lg space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="relative">
-                <input 
-                  type="text" 
-                  name="nom" 
-                  placeholder={t('contact.form.name')} 
-                  required 
-                  className="w-full p-4 border border-gray-200 rounded-xl focus:border-[#007d6f] focus:ring-2 focus:ring-[#007d6f]/20 outline-none transition-all duration-300 bg-gray-50/50" 
-                />
-              </div>
-              <div className="relative">
-                <input 
-                  type="email" 
-                  name="email" 
-                  placeholder={t('contact.form.email')} 
-                  required 
-                  className="w-full p-4 border border-gray-200 rounded-xl focus:border-[#007d6f] focus:ring-2 focus:ring-[#007d6f]/20 outline-none transition-all duration-300 bg-gray-50/50" 
-                />
-              </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <div className="relative inline-block">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#007d6f] to-[#00a199] rounded-full" />
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-[#007d6f] to-[#00a199] bg-clip-text text-transparent">
+                {t('contact.title')}
+              </h2>
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#00a199] to-[#007d6f] rounded-full" />
             </div>
-            <div className="relative">
-              <input 
-                type="text" 
-                name="objet" 
-                placeholder={t('contact.form.subject')} 
-                className="w-full p-4 border border-gray-200 rounded-xl focus:border-[#007d6f] focus:ring-2 focus:ring-[#007d6f]/20 outline-none transition-all duration-300 bg-gray-50/50" 
-              />
-            </div>
-            <div className="relative">
-              <textarea 
-                name="message" 
-                rows="4" 
-                placeholder={t('contact.form.message')} 
-                required 
-                className="w-full p-4 border border-gray-200 rounded-xl focus:border-[#007d6f] focus:ring-2 focus:ring-[#007d6f]/20 outline-none transition-all duration-300 bg-gray-50/50 resize-none" 
-              ></textarea>
-            </div>
+            <p className="mt-8 text-lg text-gray-600 max-w-2xl mx-auto">
+              {t('contact.subtitle')}
+            </p>
+          </motion.div>
 
-            {/* Conteneur pour le bouton et le message de statut */}
-            <div className="relative">
-              <motion.button 
-                type="submit" 
-                className="w-full bg-[#007d6f] text-white px-6 py-4 rounded-xl hover:bg-[#005f52] transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 font-medium shadow-lg shadow-[#007d6f]/20 disabled:opacity-50 disabled:cursor-not-allowed" 
-                disabled={formStatus === t('form.sending')}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Contact Info Cards */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-300" />
+                    <div className="relative bg-white rounded-xl p-6">
+                      <Phone className="h-8 w-8 text-[#007d6f]/80 mb-4" />
+                      <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                        {t('contact.phone')}
+                      </h4>
+                      <p className="text-gray-500">
+                        {t('contact.phone')}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-300" />
+                    <div className="relative bg-white rounded-xl p-6">
+                      <Mail className="h-8 w-8 text-[#007d6f]/80 mb-4" />
+                      <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                        {t('contact.email')}
+                      </h4>
+                      <p className="text-gray-500">
+                        {t('contact.email')}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              <motion.div 
                 whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                {formStatus === t('form.sending') ? (
-                  <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
-                ) : (
-                  t('form.submit')
-                )}
-              </motion.button>
-
-              {/* Message de statut avec animation */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ 
-                  opacity: formStatus && formStatus !== t('form.sending') ? 1 : 0,
-                  y: formStatus && formStatus !== t('form.sending') ? 0 : 10
-                }}
-                transition={{ duration: 0.3 }}
-                className={`absolute left-0 right-0 mt-2 ${
-                  formStatus === t('form.success') ? 'bg-green-50 text-green-700' : 
-                  formStatus === t('form.error') ? 'bg-red-50 text-red-700' : 
-                  'bg-[#007d6f]/10 text-[#007d6f]'
-                } py-2 px-4 rounded-lg text-sm font-medium flex items-center justify-center gap-2`}
-              >
-                {formStatus === t('form.success') && (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                )}
-                {formStatus === t('form.error') && (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                )}
-                {formStatus && formStatus !== t('form.sending') && formStatus}
+                <div className="relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-300" />
+                  <div className="relative bg-white rounded-xl p-6">
+                    <MapPin className="h-8 w-8 text-[#007d6f]/80 mb-4" />
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                      {t('contact.address')}
+                    </h4>
+                    <p className="text-gray-500">
+                      {t('contact.address')}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
-            </div>
-          </form>
+            </motion.div>
+
+            {/* Contact Form Link */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative bg-white rounded-2xl p-8 shadow-xl">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {t('contact.title')}
+                  </h3>
+                  <p className="text-gray-600 mb-8">
+                    {t('contact.subtitle')}
+                  </p>
+                  <Link 
+                    href={`/${currentLang}/contact`}
+                    className="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-[#007d6f] to-[#00a199] hover:from-[#006b5f] hover:to-[#008a84] transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    {t('contact.title')}
+                    <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

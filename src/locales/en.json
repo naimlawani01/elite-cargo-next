@@ -7,6 +7,7 @@
   "nav": {
     "about": "About",
     "services": "Services",
+    "gallery": "Gallery",
     "team": "Team",
     "stats": "Stats",
     "partners": "Partners",
@@ -112,10 +113,13 @@
   },
   "contact": {
     "title": "Contact",
+    "subtitle": "Get in touch with our team for any questions or requests",
+    "info": "Contact Information",
     "address": "Freight Terminal of Gbessia Airport, Conakry (Republic of Guinea)",
     "email": "info@elite-cargo.net",
     "phone": "+224 622 65 25 11",
     "form": {
+      "title": "Send us a message",
       "name": "Name",
       "email": "Email",
       "subject": "Subject",
@@ -133,5 +137,14 @@
   "footer": {
     "rights": "© 2025 Elite Cargo. All rights reserved.",
     "madeBy": "Site made by"
+  },
+  "gallery": {
+    "title": "Our Gallery",
+    "subtitle": "Discover our facilities, operations and team in action",
+    "categories": {
+      "operations": "Operations",
+      "facilities": "Facilities",
+      "team": "Our Team"
+    }
   }
 }

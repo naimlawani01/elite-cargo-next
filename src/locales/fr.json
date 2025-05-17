@@ -7,6 +7,7 @@
   "nav": {
     "about": "À propos",
     "services": "Services",
+    "gallery": "Galerie",
     "team": "Équipe",
     "stats": "Chiffres",
     "partners": "Partenaires",
@@ -112,10 +113,13 @@
   },
   "contact": {
     "title": "Contact",
+    "subtitle": "Contactez notre équipe pour toute question ou demande",
+    "info": "Informations de contact",
     "address": "Aérogare de fret de l'Aéroport Gbessia de Conakry (République de Guinée)",
     "email": "info@elite-cargo.net",
     "phone": "+224 622 65 25 11",
     "form": {
+      "title": "Envoyez-nous un message",
       "name": "Nom",
       "email": "Email",
       "subject": "Objet",
@@ -133,5 +137,14 @@
   "footer": {
     "rights": "© 2025 Elite Cargo. Tous droits réservés.",
     "madeBy": "Site réalisé par"
+  },
+  "gallery": {
+    "title": "Notre Galerie",
+    "subtitle": "Découvrez nos installations, nos opérations et notre équipe en action",
+    "categories": {
+      "operations": "Opérations",
+      "facilities": "Installations",
+      "team": "Notre Équipe"
+    }
   }
 }

@@ -22,8 +22,11 @@ export default function LanguageSwitcher() {
     i18n.changeLanguage(lng);
     // Sauvegarder la préférence
     localStorage.setItem('language', lng);
-    // Rediriger vers la nouvelle URL
-    router.push(`/${lng}`);
+    
+    // Préserver la page actuelle lors du changement de langue
+    const currentPath = pathname.split('/').slice(2).join('/');
+    const newPath = currentPath ? `/${lng}/${currentPath}` : `/${lng}`;
+    router.push(newPath);
   };
 
   return (
