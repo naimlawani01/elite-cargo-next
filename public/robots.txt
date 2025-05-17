@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://elite-cargo.net/sitemap.xml

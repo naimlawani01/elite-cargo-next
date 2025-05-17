@@ -1,0 +1,137 @@
+{
+  "hero": {
+    "title": "Des solutions logistiques sans frontières",
+    "subtitle": "Elite Cargo vous accompagne avec excellence dans le fret aérien, le transit douanier et le déménagement international depuis 1997.",
+    "cta": "Demander un devis personnalisé"
+  },
+  "nav": {
+    "about": "À propos",
+    "services": "Services",
+    "team": "Équipe",
+    "stats": "Chiffres",
+    "partners": "Partenaires",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "Qui sommes-nous ?",
+    "text1": "Depuis plus de 20 ans, Elite Cargo est le spécialiste du fret aérien, du transit international et du déménagement. Grâce à nos valeurs de réactivité, de rigueur et de transparence, nous offrons un accompagnement sur mesure à tous nos partenaires.",
+    "text2": "Notre expertise repose sur un réseau de filiales solides en Afrique de l'Ouest et une équipe hautement qualifiée. Nous assurons chaque étape logistique avec sérieux, de l'enlèvement à la livraison."
+  },
+  "services": {
+    "title": "Nos Services",
+    "freight": {
+      "title": "Fret aérien",
+      "description": "Gestion complète du fret sur les principales compagnies aériennes avec suivi et sécurité optimisés."
+    },
+    "customs": {
+      "title": "Transit & Douane",
+      "description": "Formalités douanières, transit import/export, documentation spécialisée sur mesure."
+    },
+    "moving": {
+      "title": "Déménagement",
+      "description": "Solutions complètes pour les déménagements professionnels et particuliers à l'international."
+    }
+  },
+  "stats": {
+    "title": "Nos Chiffres Clés",
+    "warehouses": {
+      "value": "2400 m²",
+      "label": "d'entrepôts"
+    },
+    "employees": {
+      "value": "+15",
+      "label": "employés formés"
+    },
+    "experience": {
+      "value": "+20 ans",
+      "label": "d'expérience"
+    }
+  },
+  "reasons": {
+    "title": "Pourquoi nous choisir ?",
+    "reliability": {
+      "title": "Fiabilité",
+      "desc": "Des délais respectés et un suivi précis de bout en bout."
+    },
+    "reactivity": {
+      "title": "Réactivité",
+      "desc": "Une équipe disponible 7j/7 pour vous accompagner."
+    },
+    "network": {
+      "title": "Réseau mondial",
+      "desc": "Un maillage international grâce à nos partenaires."
+    }
+  },
+  "team": {
+    "title": "Notre Équipe",
+    "members": {
+      "director": {
+        "name": "LAWANI Aminou",
+        "role": "Directeur Général"
+      },
+      "admin": {
+        "name": "AKOBI Jacques",
+        "role": "Administration"
+      },
+      "operations": {
+        "name": "CAMARA Djibril",
+        "role": "Exploitation Fret"
+      }
+    }
+  },
+  "branches": {
+    "title": "Nos Présences Régionales",
+    "guinea": {
+      "country": "Guinée",
+      "name": "Elite Cargo Guinée",
+      "note": "(Guinée Cargo Handling S)"
+    },
+    "mali": {
+      "country": "Mali",
+      "name": "Elite Cargo Mali",
+      "note": "(Mali Cargo Handling Sarl)"
+    },
+    "senegal": {
+      "country": "Sénégal",
+      "name": "Elite Cargo Sénégal",
+      "note": "(Yoff Cargo Express Sarl)"
+    },
+    "benin": {
+      "country": "Bénin",
+      "name": "Elite Cargo Bénin",
+      "note": "(Elite Cargo Sarl)"
+    },
+    "ivoryCoast": {
+      "country": "Côte d'Ivoire",
+      "name": "Elite Cargo",
+      "note": "(Air Cargo Logistique et Services Sarl)"
+    }
+  },
+  "partners": {
+    "title": "Nos Partenaires & Réseaux"
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Aérogare de fret de l'Aéroport Gbessia de Conakry (République de Guinée)",
+    "email": "info@elite-cargo.net",
+    "phone": "+224 622 65 25 11",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Objet",
+      "message": "Message",
+      "submit": "Envoyer"
+    }
+  },
+  "form": {
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé ✅",
+    "error": "Erreur lors de l'envoi ❌",
+    "serverError": "Erreur serveur ❌",
+    "submit": "Envoyer"
+  },
+  "footer": {
+    "rights": "© 2025 Elite Cargo. Tous droits réservés.",
+    "madeBy": "Site réalisé par"
+  }
+}

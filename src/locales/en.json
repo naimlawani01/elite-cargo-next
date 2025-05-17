@@ -1,0 +1,137 @@
+{
+  "hero": {
+    "title": "Logistics solutions without borders",
+    "subtitle": "Elite Cargo supports you with excellence in air freight, customs transit, and international moving since 1997.",
+    "cta": "Request a personalized quote"
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "team": "Team",
+    "stats": "Stats",
+    "partners": "Partners",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "Who are we?",
+    "text1": "For over 20 years, Elite Cargo has specialized in air freight, international transit, and moving services. Thanks to our values of reactivity, rigor, and transparency, we offer customized support to all our partners.",
+    "text2": "Our expertise is based on a strong network of subsidiaries in West Africa and a highly qualified team. We ensure each logistics step with seriousness, from pickup to delivery."
+  },
+  "services": {
+    "title": "Our Services",
+    "freight": {
+      "title": "Air Freight",
+      "description": "Complete freight management on major airlines with optimized tracking and security."
+    },
+    "customs": {
+      "title": "Customs & Transit",
+      "description": "Customs formalities, import/export transit, specialized documentation on demand."
+    },
+    "moving": {
+      "title": "Moving",
+      "description": "Complete solutions for professional and personal international relocations."
+    }
+  },
+  "stats": {
+    "title": "Key Figures",
+    "warehouses": {
+      "value": "2400 m²",
+      "label": "of warehouses"
+    },
+    "employees": {
+      "value": "+15",
+      "label": "trained employees"
+    },
+    "experience": {
+      "value": "+20 years",
+      "label": "of experience"
+    }
+  },
+  "reasons": {
+    "title": "Why choose us?",
+    "reliability": {
+      "title": "Reliability",
+      "desc": "Respected deadlines and precise end-to-end tracking."
+    },
+    "reactivity": {
+      "title": "Reactivity",
+      "desc": "A team available 7 days a week to support you."
+    },
+    "network": {
+      "title": "Global Network",
+      "desc": "International coverage thanks to our partners."
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "members": {
+      "director": {
+        "name": "LAWANI Aminou",
+        "role": "General Director"
+      },
+      "admin": {
+        "name": "AKOBI Jacques",
+        "role": "Administration"
+      },
+      "operations": {
+        "name": "CAMARA Djibril",
+        "role": "Freight Operations"
+      }
+    }
+  },
+  "branches": {
+    "title": "Regional Presence",
+    "guinea": {
+      "country": "Guinea",
+      "name": "Elite Cargo Guinea",
+      "note": "(Guinea Cargo Handling S)"
+    },
+    "mali": {
+      "country": "Mali",
+      "name": "Elite Cargo Mali",
+      "note": "(Mali Cargo Handling Sarl)"
+    },
+    "senegal": {
+      "country": "Senegal",
+      "name": "Elite Cargo Senegal",
+      "note": "(Yoff Cargo Express Sarl)"
+    },
+    "benin": {
+      "country": "Benin",
+      "name": "Elite Cargo Benin",
+      "note": "(Elite Cargo Sarl)"
+    },
+    "ivoryCoast": {
+      "country": "Ivory Coast",
+      "name": "Elite Cargo",
+      "note": "(Air Cargo Logistics and Services Sarl)"
+    }
+  },
+  "partners": {
+    "title": "Our Partners & Networks"
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Freight Terminal of Gbessia Airport, Conakry (Republic of Guinea)",
+    "email": "info@elite-cargo.net",
+    "phone": "+224 622 65 25 11",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send"
+    }
+  },
+  "form": {
+    "sending": "Sending...",
+    "success": "Message sent ✅",
+    "error": "Error sending message ❌",
+    "serverError": "Server error ❌",
+    "submit": "Send"
+  },
+  "footer": {
+    "rights": "© 2025 Elite Cargo. All rights reserved.",
+    "madeBy": "Site made by"
+  }
+}
