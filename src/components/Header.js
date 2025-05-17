@@ -6,6 +6,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -35,7 +36,14 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo and Title */}
           <Link href={`/${currentLang}`} className="flex items-center space-x-3 min-w-0">
-            <img src="/images/elite.svg" alt="Elite Cargo" className="h-10 w-auto flex-shrink-0" />
+            <Image
+              src="/images/elite.svg"
+              alt="Elite Cargo"
+              width={40}
+              height={40}
+              className="h-10 w-auto flex-shrink-0"
+              priority
+            />
             <div className="flex flex-col min-w-0">
               <span className="text-xl font-bold text-[#007d6f] truncate">Elite Cargo</span>
               <span className="text-xs text-gray-500 truncate">Transport & Logistique</span>

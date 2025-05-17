@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Header from './Header';
+import Image from 'next/image';
 
 const Gallery = () => {
   const { t } = useTranslation();
@@ -165,10 +166,12 @@ const Gallery = () => {
                   className="group relative flex-none w-[400px] aspect-[4/3] overflow-hidden rounded-lg cursor-pointer shadow-md hover:shadow-lg transition-all duration-300 snap-center"
                   onClick={() => setSelectedImage(image)}
                 >
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
+                    fill
                     className="w-full h-full object-cover transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
                     <div className="p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -204,7 +207,7 @@ const Gallery = () => {
               >
                 <ChevronLeft className="w-4 h-4" />
               </motion.div>
-              <span className="font-medium">Faites défiler pour voir plus d'images</span>
+              <span className="font-medium">Faites défiler pour voir plus d&apos;images</span>
               <motion.div
                 animate={{ x: [0, -5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -296,10 +299,12 @@ const Gallery = () => {
                 <X className="w-8 h-8" />
               </button>
               <div className="relative">
-                <img
+                <Image
                   src={selectedImage.src}
                   alt={selectedImage.alt}
+                  fill
                   className="w-full h-auto rounded-2xl shadow-2xl"
+                  sizes="(max-width: 1200px) 100vw, 1200px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl" />
                 <p className="absolute bottom-6 left-6 right-6 text-white text-xl font-medium">
