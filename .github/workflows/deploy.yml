@@ -78,5 +78,5 @@ jobs:
             set mirror:parallel-transfer-count 4;
             set mirror:parallel-chunk-size 1M;
             open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ftp://${{ secrets.FTP_SERVER }}:21;
-            mirror --reverse --verbose=3 --ignore-time --parallel=4 --only-newer ./out/ ${{ secrets.FTP_SERVER_DIR }}/
+            mirror --reverse --verbose=3 --parallel=4 --only-newer ./out/ ${{ secrets.FTP_SERVER_DIR }}/
           " 
