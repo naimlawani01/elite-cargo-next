@@ -33,7 +33,7 @@ jobs:
           ls -la out/
 
       - name: Deploy to LWS cPanel
-        uses: eisbergu/ftp-deploy-action@v1.0.0
+        uses: SanderRonde/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
