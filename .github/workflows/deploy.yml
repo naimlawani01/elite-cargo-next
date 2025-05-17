@@ -33,14 +33,14 @@ jobs:
           ls -la out/
 
       - name: Deploy to LWS cPanel
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
-          username: ${{ secrets.FTP_USERNAME }}
           server: ${{ secrets.FTP_SERVER }}
-          ssh_private_key: ${{ secrets.FTP_PASSWORD }}
-          local_path: 'out/**'
-          remote_path: ${{ secrets.FTP_SERVER_DIR }}
-          port: 21
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          dangerous-clean-slate: true
           exclude: |
             .git*
             .env*
