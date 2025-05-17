@@ -27,14 +27,15 @@ jobs:
         env:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
 
-      - name: List build output
+      - name: Prepare files for deployment
         run: |
+          echo "Création des index.html..."
+          cp out/fr.html out/index.html
+          cp out/en.html out/en/index.html
           echo "Contenu du dossier out/:"
           ls -la out/
           echo "Structure des dossiers:"
           find out/ -type f
-          echo "Vérification de index.html:"
-          ls -la out/index.html || echo "index.html non trouvé!"
 
       - name: Install LFTP
         run: sudo apt-get install -y lftp
@@ -51,5 +52,4 @@ jobs:
             set mirror:parallel-chunk-size 1M;
             open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ftp://${{ secrets.FTP_SERVER }}:21;
             mirror --reverse --verbose=3 --ignore-time --parallel=4 --only-newer ./out/ ${{ secrets.FTP_SERVER_DIR }}/
-            put -O ${{ secrets.FTP_SERVER_DIR }}/ ./out/index.html
           " 
