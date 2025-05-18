@@ -60,22 +60,4 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://elite-cargo.net/fr/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://elite-cargo.net/en/contact"/>
   </url>
-  <url>
-    <loc>https://elite-cargo.net/#about</loc>
-  </url>
-  <url>
-    <loc>https://elite-cargo.net/#services</loc>
-  </url>
-  <url>
-    <loc>https://elite-cargo.net/#team</loc>
-  </url>
-  <url>
-    <loc>https://elite-cargo.net/#stats</loc>
-  </url>
-  <url>
-    <loc>https://elite-cargo.net/#certifications</loc>
-  </url>
-  <url>
-    <loc>https://elite-cargo.net/#contact</loc>
-  </url>
 </urlset>
