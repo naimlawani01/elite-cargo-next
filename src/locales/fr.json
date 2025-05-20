@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Des solutions logistiques sans frontières",
-    "subtitle": "Elite Cargo vous accompagne avec excellence dans le fret aérien, le transit douanier et le déménagement international depuis 1997.",
+    "subtitle": "Depuis 1997, Elite Cargo est votre partenaire expert en fret aérien, transit et logistique, connectant l'Afrique de l'Ouest au monde avec fiabilité et excellence.",
     "cta": "Demander un devis personnalisé"
   },
   "nav": {
@@ -15,12 +15,13 @@
     "home": "Accueil"
   },
   "about": {
-    "title": "Qui sommes-nous ?",
-    "text1": "Depuis plus de 20 ans, Elite Cargo est le spécialiste du fret aérien, du transit international et du déménagement. Grâce à nos valeurs de réactivité, de rigueur et de transparence, nous offrons un accompagnement sur mesure à tous nos partenaires.",
-    "text2": "Notre expertise repose sur un réseau de filiales solides en Afrique de l'Ouest et une équipe hautement qualifiée. Nous assurons chaque étape logistique avec sérieux, de l'enlèvement à la livraison."
+    "title": "À Propos",
+    "text1": "Elite Cargo est un groupe leader dans le domaine du fret aérien et de la logistique en Afrique de l'Ouest. Notre expertise de plus de 25 ans dans les métiers du fret aérien nous permet d'offrir des solutions logistiques complètes et personnalisées à nos clients.",
+    "text2": "Notre force réside dans notre réseau étendu de filiales stratégiquement positionnées en Guinée, au Sénégal, au Mali, en Sierra Leone et au Bénin. Cette présence régionale nous permet d'assurer une couverture optimale et un service de proximité. Notre équipe de professionnels qualifiés, combinée à notre infrastructure moderne, nous permet de garantir un service d'excellence et une satisfaction client maximale."
   },
   "services": {
     "title": "Nos Services",
+    "subtitle": "Découvrez notre gamme complète de services de fret aérien et logistique adaptés à vos besoins",
     "freight": {
       "title": "Fret aérien",
       "description": "Gestion complète du fret sur les principales compagnies aériennes avec suivi et sécurité optimisés."
@@ -35,7 +36,8 @@
     }
   },
   "stats": {
-    "title": "Nos Chiffres Clés",
+    "title": "Nos Chiffres",
+    "subtitle": "Des années d'expérience et une expertise reconnue dans le domaine du fret aérien",
     "warehouses": {
       "value": "2400 m²",
       "label": "d'entrepôts"
@@ -45,12 +47,13 @@
       "label": "employés formés"
     },
     "experience": {
-      "value": "+20 ans",
+      "value": "+25 ans",
       "label": "d'expérience"
     }
   },
   "reasons": {
-    "title": "Pourquoi nous choisir ?",
+    "title": "Pourquoi Nous Choisir",
+    "subtitle": "Des solutions logistiques fiables et efficaces pour vos besoins de transport",
     "reliability": {
       "title": "Fiabilité",
       "desc": "Des délais respectés et un suivi précis de bout en bout."
@@ -62,10 +65,15 @@
     "network": {
       "title": "Réseau mondial",
       "desc": "Un maillage international grâce à nos partenaires."
+    },
+    "expertise": {
+      "title": "Expertise & Infrastructure",
+      "desc": "Un personnel qualifié et une infrastructure moderne pour un service d'excellence."
     }
   },
   "team": {
     "title": "Notre Équipe",
+    "subtitle": "Une équipe d'experts dédiés à votre satisfaction",
     "members": {
       "director": {
         "name": "LAWANI Aminou",
@@ -82,45 +90,38 @@
     }
   },
   "branches": {
-    "title": "Nos branches",
+    "title": "Nos Filiales",
+    "subtitle": "Un réseau étendu à travers l'Afrique de l'Ouest pour une couverture optimale",
     "guinea": {
       "country": "Guinée",
       "name": "Elite Cargo Guinée",
-      "note": "(Guinée Cargo Handling S)"
+      "note": "Elite Cargo Guinée"
     },
     "mali": {
       "country": "Mali",
       "name": "Elite Cargo Mali",
-      "note": "(Mali Cargo Handling Sarl)"
+      "note": "(Mali Cargo Handling )"
     },
     "senegal": {
       "country": "Sénégal",
       "name": "Elite Cargo Sénégal",
-      "note": "(Yoff Cargo Express Sarl)"
+      "note": "Elite Cargo Sénégal"
     },
     "benin": {
       "country": "Bénin",
       "name": "Elite Cargo Bénin",
-      "note": "(Elite Cargo Sarl)"
+      "note": "(Elite Cargo Bénin)"
     },
     "ivoryCoast": {
       "country": "Côte d'Ivoire",
-      "name": "Elite Cargo",
-      "note": "(Air Cargo Logistique et Services Sarl)"
-    },
-    "france": {
-      "country": "France",
-      "name": "Siège social",
-      "note": "Paris, France"
-    },
-    "morocco": {
-      "country": "Maroc",
-      "name": "Bureau régional",
-      "note": "Casablanca, Maroc"
+      "name": "Elite Cargo Côte d'Ivoire",
+      "note": "Elite Cargo Côte d'Ivoire"
     }
   },
   "partners": {
-    "title": "Nos Partenaires & Réseaux"
+    "title": "Nos Partenaires",
+    "subtitle": "Des partenariats stratégiques avec les plus grandes compagnies aériennes",
+    "description": "Nous collaborons avec des partenaires de confiance pour assurer un service de qualité"
   },
   "contact": {
     "title": "Contactez-nous",

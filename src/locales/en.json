@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Logistics solutions without borders",
-    "subtitle": "Elite Cargo supports you with excellence in air freight, customs transit, and international moving since 1997.",
+    "subtitle": "Since 1997, Elite Cargo has been your expert partner in air freight, customs transit, and logistics, connecting West Africa to the world with reliability and excellence.",
     "cta": "Request a personalized quote"
   },
   "nav": {
@@ -15,12 +15,13 @@
     "home": "Home"
   },
   "about": {
-    "title": "Who are we?",
-    "text1": "For over 20 years, Elite Cargo has specialized in air freight, international transit, and moving services. Thanks to our values of reactivity, rigor, and transparency, we offer customized support to all our partners.",
-    "text2": "Our expertise is based on a strong network of subsidiaries in West Africa and a highly qualified team. We ensure each logistics step with seriousness, from pickup to delivery."
+    "title": "About Us",
+    "text1": "Elite Cargo is a leading group in air freight and logistics in West Africa. Our 25+ years of expertise in air freight enables us to provide comprehensive and customized logistics solutions to our clients.",
+    "text2": "Our strength lies in our extensive network of strategically positioned subsidiaries in Guinea, Senegal, Mali, Sierra Leone, and Benin. This regional presence allows us to ensure optimal coverage and proximity service. Our team of qualified professionals, combined with our modern infrastructure, enables us to guarantee excellence in service and maximum customer satisfaction."
   },
   "services": {
     "title": "Our Services",
+    "subtitle": "Discover our complete range of air freight and logistics services tailored to your needs",
     "freight": {
       "title": "Air Freight",
       "description": "Complete freight management on major airlines with optimized tracking and security."
@@ -35,7 +36,8 @@
     }
   },
   "stats": {
-    "title": "Key Figures",
+    "title": "Our Numbers",
+    "subtitle": "Years of experience and recognized expertise in air freight",
     "warehouses": {
       "value": "2400 m²",
       "label": "of warehouses"
@@ -45,12 +47,13 @@
       "label": "trained employees"
     },
     "experience": {
-      "value": "+20 years",
+      "value": "+25 years",
       "label": "of experience"
     }
   },
   "reasons": {
-    "title": "Why choose us?",
+    "title": "Why Choose Us",
+    "subtitle": "Reliable and efficient logistics solutions for your transportation needs",
     "reliability": {
       "title": "Reliability",
       "desc": "Respected deadlines and precise end-to-end tracking."
@@ -62,10 +65,15 @@
     "network": {
       "title": "Global Network",
       "desc": "International coverage thanks to our partners."
+    },
+    "expertise": {
+      "title": "Expertise & Infrastructure",
+      "desc": "Qualified personnel and modern infrastructure for excellence in service."
     }
   },
   "team": {
     "title": "Our Team",
+    "subtitle": "A team of experts dedicated to your satisfaction",
     "members": {
       "director": {
         "name": "LAWANI Aminou",
@@ -83,44 +91,37 @@
   },
   "branches": {
     "title": "Our Branches",
-    "france": {
-      "country": "France",
-      "name": "Headquarters",
-      "note": "Paris, France"
-    },
-    "morocco": {
-      "country": "Morocco",
-      "name": "Regional Office",
-      "note": "Casablanca, Morocco"
-    },
+    "subtitle": "An extensive network across West Africa for optimal coverage",
     "guinea": {
       "country": "Guinea",
       "name": "Elite Cargo Guinea",
-      "note": "(Guinea Cargo Handling S)"
+      "note": "Elite Cargo Guinea"
     },
     "mali": {
       "country": "Mali",
       "name": "Elite Cargo Mali",
-      "note": "(Mali Cargo Handling Sarl)"
+      "note": "(Mali Cargo Handling )"
     },
     "senegal": {
       "country": "Senegal",
       "name": "Elite Cargo Senegal",
-      "note": "(Yoff Cargo Express Sarl)"
+      "note": "Elite Cargo Senegal"
     },
     "benin": {
       "country": "Benin",
       "name": "Elite Cargo Benin",
-      "note": "(Elite Cargo Sarl)"
+      "note": "(Elite Cargo Benin)"
     },
     "ivoryCoast": {
       "country": "Ivory Coast",
-      "name": "Elite Cargo",
-      "note": "(Air Cargo Logistics and Services Sarl)"
+      "name": "Elite Cargo Côte d'Ivoire",
+      "note": "Elite Cargo Côte d'Ivoire"
     }
   },
   "partners": {
-    "title": "Our Partners & Networks"
+    "title": "Our Partners",
+    "subtitle": "Strategic partnerships with major airlines",
+    "description": "We collaborate with trusted partners to ensure quality service"
   },
   "contact": {
     "title": "Contact Us",
