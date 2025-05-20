@@ -7,6 +7,7 @@ import ContactForm from '@/components/ContactForm';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Footer from '@/components/Footer';
+import SectionTitle from '@/components/SectionTitle';
 
 // Composant client qui gère l'interface utilisateur
 const ContactPage = ({ params }) => {
@@ -109,18 +110,18 @@ const ContactPage = ({ params }) => {
 
               {/* Branches */}
               <motion.div 
-                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
                 className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="relative">
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-2xl blur opacity-15 group-hover:opacity-25 transition duration-300" />
                   <div className="relative">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-8">
-                      {t('branches.title')}
-                    </h2>
-                    <div className="space-y-6">
+                    <SectionTitle>{t('branches.title')}</SectionTitle>
+                    <div className="space-y-6 pt-8">
                       {Object.entries(t('branches', { returnObjects: true }))
-                        .filter(([key]) => key !== 'title')
+                        .filter(([key]) => key !== 'title' && key !== 'subtitle')
                         .map(([key, branch], index) => (
                           <motion.div 
                             key={key}
