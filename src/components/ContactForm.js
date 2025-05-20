@@ -50,7 +50,7 @@ const ContactForm = () => {
         setStatus({ type: 'error', message: t('form.error') });
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       setStatus({ type: 'error', message: t('form.serverError') });
     } finally {
       setIsSubmitting(false);

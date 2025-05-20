@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next';
 import Header from './Header';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import SectionTitle from './SectionTitle';
+import Footer from './Footer';
 
 export default function EliteCargoLandingPage() {
   const { t } = useTranslation();
@@ -50,6 +52,11 @@ export default function EliteCargoLandingPage() {
       icon: <Globe className="w-8 h-8 text-[#00a199] mb-3" />, 
       title: t('reasons.network.title'), 
       desc: t('reasons.network.desc') 
+    },
+    { 
+      icon: <Users className="w-8 h-8 text-[#00a199] mb-3" />, 
+      title: t('reasons.expertise.title'), 
+      desc: t('reasons.expertise.desc') 
     }
   ];
 
@@ -127,25 +134,6 @@ export default function EliteCargoLandingPage() {
     }
   ];
 
-  // Composant de titre de section réutilisable
-  const SectionTitle = ({ children }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="mb-16 text-center"
-    >
-      <div className="relative inline-block">
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#007d6f] to-[#00a199] rounded-full" />
-        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#007d6f] to-[#00a199] bg-clip-text text-transparent">
-          {children}
-        </h2>
-        <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#00a199] to-[#007d6f] rounded-full" />
-      </div>
-    </motion.div>
-  );
-
   return (
     <main className="min-h-screen bg-white text-gray-800 font-sans">
       <Header />
@@ -180,7 +168,7 @@ export default function EliteCargoLandingPage() {
             {t('hero.title')}
           </motion.h1>
           <motion.p 
-            className="text-lg md:text-xl max-w-3xl text-white/90 mb-12 font-light leading-relaxed"
+            className="text-sm md:text-base max-w-3xl text-white/70 mb-12 font-light leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
@@ -226,78 +214,81 @@ export default function EliteCargoLandingPage() {
         {/* Effet de fond décoratif */}
         <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5" />
         
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center relative">
+        <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <SectionTitle>{t('about.title')}</SectionTitle>
-              </motion.div>
-              
-              <motion.p 
-                className="text-gray-700 text-lg leading-relaxed font-light"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                {t('about.text1')}
-              </motion.p>
-              
-              <motion.p 
-                className="text-gray-600 text-base leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                {t('about.text2')}
-              </motion.p>
-            </div>
+            <SectionTitle>{t('about.title')}</SectionTitle>
+          </motion.div>
 
-            {/* Ligne décorative */}
-            <motion.div 
-              className="w-24 h-1 bg-gradient-to-r from-[#007d6f] to-[#00a199] rounded-full"
-              initial={{ width: 0 }}
-              whileInView={{ width: 96 }}
+          <div className="grid md:grid-cols-2 gap-16 items-center relative">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.8 }}
-            />
-          </motion.div>
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="space-y-8"
+            >
+              <div className="space-y-6">
+                <motion.p 
+                  className="text-gray-600 text-lg leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  {t('about.text1')}
+                </motion.p>
+                
+                <motion.p 
+                  className="text-gray-600 text-lg leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  {t('about.text2')}
+                </motion.p>
+              </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative group"
-          >
-            {/* Effet de brillance au survol */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            
-            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-700 group-hover:shadow-[#007d6f]/20">
-              <img
-                src="https://images.unsplash.com/photo-1605732562742-3023a888e56e?q=80&w=3135&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Fret Elite Cargo"
-                className="w-full h-full object-cover scale-105 brightness-90 transition-all duration-700 group-hover:brightness-100 group-hover:scale-100"
+              {/* Ligne décorative */}
+              <motion.div 
+                className="w-24 h-1 bg-gradient-to-r from-[#007d6f] to-[#00a199] rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: 96 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.8 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#007d6f]/20 via-transparent to-[#00a199]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            </div>
+            </motion.div>
 
-            {/* Effets décoratifs */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#00a199]/5 rounded-full blur-2xl group-hover:bg-[#00a199]/10 transition-colors duration-700" />
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#007d6f]/5 rounded-full blur-xl group-hover:bg-[#007d6f]/10 transition-colors duration-700" />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative group"
+            >
+              {/* Effet de brillance au survol */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#007d6f]/10 to-[#00a199]/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-700 group-hover:shadow-[#007d6f]/20">
+                <img
+                  src="https://images.unsplash.com/photo-1605732562742-3023a888e56e?q=80&w=3135&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Fret Elite Cargo"
+                  className="w-full h-full object-cover scale-105 brightness-90 transition-all duration-700 group-hover:brightness-100 group-hover:scale-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#007d6f]/20 via-transparent to-[#00a199]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              </div>
+
+              {/* Effets décoratifs */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#00a199]/5 rounded-full blur-2xl group-hover:bg-[#00a199]/10 transition-colors duration-700" />
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#007d6f]/5 rounded-full blur-xl group-hover:bg-[#007d6f]/10 transition-colors duration-700" />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -305,6 +296,15 @@ export default function EliteCargoLandingPage() {
       <section id="services" className="py-32 px-6 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto">
           <SectionTitle>{t('services.title')}</SectionTitle>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto mb-8 text-center"
+          >
+            {t('services.subtitle')}
+          </motion.p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
@@ -337,21 +337,16 @@ export default function EliteCargoLandingPage() {
       <section id="stats" className="py-32 px-6 bg-gradient-to-r from-[#007d6f] to-[#00a199] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5" />
         <div className="max-w-6xl mx-auto relative">
-          <motion.div
+          <SectionTitle isDark={true}>{t('stats.title')}</SectionTitle>
+          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-16 text-center"
+            className="mt-4 text-lg text-white/90 max-w-2xl mx-auto mb-8 text-center"
           >
-            <div className="relative inline-block">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-white/30 rounded-full" />
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                {t('stats.title')}
-              </h2>
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-white/30 rounded-full" />
-            </div>
-          </motion.div>
+            {t('stats.subtitle')}
+          </motion.p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((item, index) => (
               <motion.div
@@ -431,6 +426,15 @@ export default function EliteCargoLandingPage() {
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <SectionTitle>{t('reasons.title')}</SectionTitle>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto mb-8 text-center"
+          >
+            {t('reasons.subtitle')}
+          </motion.p>
           <div className="space-y-12">
             {reasons.map((reason, index) => (
               <motion.div
@@ -458,6 +462,15 @@ export default function EliteCargoLandingPage() {
       <section className="py-24 px-6 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto">
           <SectionTitle>{t('branches.title')}</SectionTitle>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto mb-8 text-center"
+          >
+            {t('branches.subtitle')}
+          </motion.p>
           
           {/* Conteneur de défilement horizontal */}
           <div className="relative">
@@ -493,9 +506,9 @@ export default function EliteCargoLandingPage() {
                       <div className="absolute inset-0 bg-gradient-to-br from-[#007d6f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       
                       {/* En-tête avec drapeau */}
-                      <div className="relative mb-6">
-                        <div className="absolute -top-1 -right-1 w-12 h-12 bg-[#00a199]/5 rounded-full blur-lg group-hover:bg-[#00a199]/10 transition-colors duration-500" />
-                        <div className="relative w-10 h-7 rounded-md overflow-hidden shadow-sm transform group-hover:scale-105 transition-transform duration-500">
+                      <div className="relative mb-4">
+                        <div className="absolute -top-1 -right-1 w-8 h-8 bg-[#00a199]/5 rounded-full blur-lg group-hover:bg-[#00a199]/10 transition-colors duration-500" />
+                        <div className="relative w-6 h-4 rounded-sm overflow-hidden shadow-sm transform group-hover:scale-105 transition-transform duration-500">
                           <img 
                             src={branch.flag} 
                             alt={branch.country} 
@@ -568,6 +581,15 @@ export default function EliteCargoLandingPage() {
       <section id="team" className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
           <SectionTitle>{t('team.title')}</SectionTitle>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto mb-8 text-center"
+          >
+            {t('team.subtitle')}
+          </motion.p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {team.map((member, index) => (
               <motion.div
@@ -646,6 +668,15 @@ export default function EliteCargoLandingPage() {
       <section id="partners" className="py-24 px-6 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto">
           <SectionTitle>{t('partners.title')}</SectionTitle>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto mb-8 text-center"
+          >
+            {t('partners.subtitle')}
+          </motion.p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
             {partners.map((partner, index) => (
               <motion.div
@@ -690,24 +721,16 @@ export default function EliteCargoLandingPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00a199]/5 rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div 
+          <SectionTitle>{t('contact.title')}</SectionTitle>
+          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto mb-8 text-center"
           >
-            <div className="relative inline-block">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#007d6f] to-[#00a199] rounded-full" />
-              <h2 className="text-4xl font-bold bg-gradient-to-r from-[#007d6f] to-[#00a199] bg-clip-text text-transparent">
-                {t('contact.title')}
-              </h2>
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#00a199] to-[#007d6f] rounded-full" />
-            </div>
-            <p className="mt-8 text-lg text-gray-600 max-w-2xl mx-auto">
-              {t('contact.subtitle')}
-            </p>
-          </motion.div>
+            {t('contact.subtitle')}
+          </motion.p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Contact Info Cards */}
