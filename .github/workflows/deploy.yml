@@ -58,6 +58,18 @@ jobs:
           RewriteCond %{REQUEST_FILENAME} !-d
           RewriteRule ^en/gallery/?$ /en/gallery/index.html [L]
           
+          # Gérer les routes pour /fr/contact
+          RewriteCond %{REQUEST_URI} ^/fr/contact/?$
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule ^fr/contact/?$ /fr/contact/index.html [L]
+          
+          # Gérer les routes pour /fr/gallery
+          RewriteCond %{REQUEST_URI} ^/fr/gallery/?$
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule ^fr/gallery/?$ /fr/gallery/index.html [L]
+          
           # Gérer les routes pour /contact
           RewriteCond %{REQUEST_URI} ^/contact/?$
           RewriteCond %{REQUEST_FILENAME} !-f
@@ -75,6 +87,12 @@ jobs:
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteCond %{REQUEST_FILENAME} !-d
           RewriteRule ^en/(.*)$ /en/index.html [L]
+          
+          # Gérer les routes pour /fr/
+          RewriteCond %{REQUEST_URI} ^/fr/
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule ^fr/(.*)$ /fr/index.html [L]
           
           # Gérer les routes pour la racine
           RewriteCond %{REQUEST_FILENAME} !-f
