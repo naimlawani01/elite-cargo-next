@@ -3,7 +3,7 @@ name: Deploy to LWS cPanel
 on:
   push:
     branches:
-      - develop  # ou master selon votre branche principale
+      - main  # ou master selon votre branche principale
 
 jobs:
   deploy:
