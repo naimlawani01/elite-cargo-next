@@ -1,15 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  reactStrictMode: true,
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
-  // Désactiver le mode strict pour l'export statique
-  reactStrictMode: false,
-  // Configuration pour le déploiement statique
-  trailingSlash: true,
-  basePath: '',
-  assetPrefix: '',
 }
 
 module.exports = nextConfig 
