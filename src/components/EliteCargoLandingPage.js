@@ -115,22 +115,16 @@ export default function EliteCargoLandingPage() {
       flag: "https://flagcdn.com/16x12/ml.png" 
     },
     { 
-      country: t('branches.senegal.country'), 
-      name: t('branches.senegal.name'), 
-      note: t('branches.senegal.note'), 
-      flag: "https://flagcdn.com/16x12/sn.png" 
-    },
-    { 
       country: t('branches.benin.country'), 
       name: t('branches.benin.name'), 
       note: t('branches.benin.note'), 
       flag: "https://flagcdn.com/16x12/bj.png"
     },
     { 
-      country: t('branches.ivoryCoast.country'), 
-      name: t('branches.ivoryCoast.name'), 
-      note: t('branches.ivoryCoast.note'), 
-      flag: "https://flagcdn.com/16x12/ci.png"
+      country: t('branches.sierraLeone.country'), 
+      name: t('branches.sierraLeone.name'), 
+      note: t('branches.sierraLeone.note'), 
+      flag: "https://flagcdn.com/16x12/sl.png"
     }
   ];
 

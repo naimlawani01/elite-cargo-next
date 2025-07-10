@@ -102,20 +102,15 @@
       "name": "Elite Cargo Mali",
       "note": "(Mali Cargo Handling )"
     },
-    "senegal": {
-      "country": "Senegal",
-      "name": "Elite Cargo Senegal",
-      "note": "Elite Cargo Senegal"
-    },
     "benin": {
       "country": "Benin",
       "name": "Elite Cargo Benin",
       "note": "(Elite Cargo Benin)"
     },
-    "ivoryCoast": {
-      "country": "Ivory Coast",
-      "name": "Elite Cargo Côte d'Ivoire",
-      "note": "Elite Cargo Côte d'Ivoire"
+    "sierraLeone": {
+      "country": "Sierra Leone",
+      "name": "SEA AN AIR SERVICES",
+      "note": "SEA AN AIR SERVICES"
     }
   },
   "partners": {
