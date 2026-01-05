@@ -151,9 +151,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@elite-cargo.net" className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group">
+                <a href="mailto:info@elite-cargo.net" className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group">
                   <Mail className="w-4 h-4 mt-0.5 text-[#00897B] group-hover:text-white transition-colors" />
-                  <span className="text-sm">contact@elite-cargo.net</span>
+                  <span className="text-sm">info@elite-cargo.net</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-slate-400">

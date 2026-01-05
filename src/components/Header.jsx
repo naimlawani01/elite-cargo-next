@@ -51,9 +51,9 @@ const Header = () => {
                 <Phone className="w-3.5 h-3.5" />
                 <span>+224 622 65 25 11</span>
               </a>
-              <a href="mailto:contact@elite-cargo.net" className="flex items-center gap-2 hover:text-white/80 transition-colors">
+              <a href="mailto:info@elite-cargo.net" className="flex items-center gap-2 hover:text-white/80 transition-colors">
                 <Mail className="w-3.5 h-3.5" />
-                <span>contact@elite-cargo.net</span>
+                <span>info@elite-cargo.net</span>
               </a>
             </div>
             <div className="flex items-center gap-4">
@@ -195,9 +195,9 @@ const Header = () => {
                     <Phone className="w-4 h-4" />
                     <span className="text-sm">+224 622 65 25 11</span>
                   </a>
-                  <a href="mailto:contact@elite-cargo.net" className="flex items-center gap-3 px-4 py-2 text-slate-600 hover:text-[#004D40] transition-colors">
+                  <a href="mailto:info@elite-cargo.net" className="flex items-center gap-3 px-4 py-2 text-slate-600 hover:text-[#004D40] transition-colors">
                     <Mail className="w-4 h-4" />
-                    <span className="text-sm">contact@elite-cargo.net</span>
+                    <span className="text-sm">info@elite-cargo.net</span>
                   </a>
                 </motion.div>
               </div>

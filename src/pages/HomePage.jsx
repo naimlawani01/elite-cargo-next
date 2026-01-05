@@ -721,7 +721,7 @@ export default function HomePage() {
                 </motion.a>
 
                 <motion.a
-                  href="mailto:contact@elite-cargo.net"
+                  href="mailto:info@elite-cargo.net"
                   whileHover={{ x: 5 }}
                   className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-colors group"
                 >
