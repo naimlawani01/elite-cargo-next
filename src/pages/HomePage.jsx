@@ -10,6 +10,7 @@ import { Link, useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SectionTitle from '../components/SectionTitle';
+import SEO from '../components/SEO';
 
 export default function HomePage() {
   const { t, i18n } = useTranslation();
@@ -147,8 +148,28 @@ export default function HomePage() {
     }
   ];
 
+  const seoData = {
+    fr: {
+      title: 'Elite Cargo | Leader du Fret Aérien & Logistique en Afrique de l\'Ouest depuis 1997',
+      description: 'Elite Cargo, société leader en fret aérien, maritime et terrestre depuis 1997. Expert en transit, douane et déménagement international en Guinée, Mali, Bénin et Sierra Leone.',
+      keywords: 'Elite Cargo, fret aérien Guinée, fret maritime Conakry, logistique Afrique Ouest, transit douane Guinée'
+    },
+    en: {
+      title: 'Elite Cargo | Air Freight & Logistics Leader in West Africa since 1997',
+      description: 'Elite Cargo, leading company in air, sea and land freight since 1997. Expert in customs, transit and international moving in Guinea, Mali, Benin and Sierra Leone.',
+      keywords: 'Elite Cargo, air freight Guinea, sea freight Conakry, West Africa logistics, customs transit Guinea'
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white font-body">
+      <SEO
+        title={seoData[lang]?.title || seoData.fr.title}
+        description={seoData[lang]?.description || seoData.fr.description}
+        keywords={seoData[lang]?.keywords || seoData.fr.keywords}
+        canonical={`https://elite-cargo.net/${lang}`}
+        lang={lang}
+      />
       <Header />
 
       {/* ==================== HERO SECTION ==================== */}

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 export default function GalleryPage() {
   const { t, i18n } = useTranslation();
@@ -54,8 +55,28 @@ export default function GalleryPage() {
   const currentCategoryData = categories.find(cat => cat.id === currentCategory);
   const currentImages = currentCategoryData?.images || [];
 
+  const seoData = {
+    fr: {
+      title: 'Galerie | Elite Cargo - Nos Installations & Opérations',
+      description: 'Découvrez les installations et opérations d\'Elite Cargo en images. Entrepôts modernes de 2400m², équipe professionnelle et équipements de pointe pour le fret aérien.',
+      keywords: 'galerie Elite Cargo, photos entrepôt Guinée, installations fret Conakry'
+    },
+    en: {
+      title: 'Gallery | Elite Cargo - Our Facilities & Operations',
+      description: 'Discover Elite Cargo facilities and operations in pictures. Modern 2400m² warehouses, professional team and state-of-the-art equipment for air freight.',
+      keywords: 'Elite Cargo gallery, Guinea warehouse photos, Conakry freight facilities'
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white font-body">
+      <SEO
+        title={seoData[lang]?.title || seoData.fr.title}
+        description={seoData[lang]?.description || seoData.fr.description}
+        keywords={seoData[lang]?.keywords || seoData.fr.keywords}
+        canonical={`https://elite-cargo.net/${lang}/gallery`}
+        lang={lang}
+      />
       <Header />
 
       {/* Hero Section */}

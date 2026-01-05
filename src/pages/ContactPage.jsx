@@ -7,6 +7,7 @@ import { Send, Phone, Mail, MapPin, Clock, CheckCircle2, AlertCircle } from 'luc
 import emailjs from '@emailjs/browser';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 // ============================================
 // CONFIGURATION EMAILJS - À REMPLIR
@@ -132,8 +133,28 @@ export default function ContactPage() {
     }
   ];
 
+  const seoData = {
+    fr: {
+      title: 'Contact | Elite Cargo - Fret Aérien & Logistique Guinée',
+      description: 'Contactez Elite Cargo pour vos besoins en fret aérien, maritime et transit douane. Devis gratuit. Aéroport Gbessia, Conakry, Guinée. Tél: +224 622 65 25 11',
+      keywords: 'contact Elite Cargo, devis fret Guinée, téléphone Elite Cargo, adresse Conakry'
+    },
+    en: {
+      title: 'Contact | Elite Cargo - Air Freight & Logistics Guinea',
+      description: 'Contact Elite Cargo for your air freight, sea freight and customs needs. Free quote. Gbessia Airport, Conakry, Guinea. Tel: +224 622 65 25 11',
+      keywords: 'contact Elite Cargo, freight quote Guinea, Elite Cargo phone, Conakry address'
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white font-body">
+      <SEO
+        title={seoData[lang]?.title || seoData.fr.title}
+        description={seoData[lang]?.description || seoData.fr.description}
+        keywords={seoData[lang]?.keywords || seoData.fr.keywords}
+        canonical={`https://elite-cargo.net/${lang}/contact`}
+        lang={lang}
+      />
       <Header />
 
       {/* Hero Section */}
