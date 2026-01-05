@@ -2,7 +2,8 @@
   "hero": {
     "title": "Logistics solutions without borders",
     "subtitle": "Since 1997, Elite Cargo has been your expert partner in air freight, customs transit, and logistics, connecting West Africa to the world with reliability and excellence.",
-    "cta": "Request a personalized quote"
+    "cta": "Request a personalized quote",
+    "scroll": "Scroll"
   },
   "nav": {
     "about": "About",
@@ -92,6 +93,7 @@
   "branches": {
     "title": "Our Branches",
     "subtitle": "An extensive network across West Africa for optimal coverage",
+    "scrollHint": "Scroll to discover our branches",
     "guinea": {
       "country": "Guinea",
       "name": "Elite Cargo Guinea",
@@ -153,16 +155,24 @@
     "submit": "Send"
   },
   "footer": {
-    "rights": "© 2024 Elite Cargo. All rights reserved.",
+    "rights": "All rights reserved.",
     "madeBy": "Created by"
   },
   "gallery": {
     "title": "Our Gallery",
     "subtitle": "Discover our facilities, operations and team in action",
+    "scrollHint": "Scroll to see more images",
+    "clickToEnlarge": "Click to enlarge",
     "categories": {
       "operations": "Operations",
       "facilities": "Facilities",
       "team": "Our Team"
     }
+  },
+  "accessibility": {
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
+    "previousPage": "Previous page",
+    "nextPage": "Next page"
   }
 }

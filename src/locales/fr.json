@@ -2,7 +2,8 @@
   "hero": {
     "title": "Des solutions logistiques sans frontières",
     "subtitle": "Depuis 1997, Elite Cargo est votre partenaire expert en fret aérien, transit et logistique, connectant l'Afrique de l'Ouest au monde avec fiabilité et excellence.",
-    "cta": "Demander un devis personnalisé"
+    "cta": "Demander un devis personnalisé",
+    "scroll": "Défiler"
   },
   "nav": {
     "about": "À propos",
@@ -92,6 +93,7 @@
   "branches": {
     "title": "Nos Filiales",
     "subtitle": "Un réseau étendu à travers l'Afrique de l'Ouest pour une couverture optimale",
+    "scrollHint": "Faites défiler pour découvrir nos branches",
     "guinea": {
       "country": "Guinée",
       "name": "Elite Cargo Guinée",
@@ -153,16 +155,24 @@
     "submit": "Envoyer"
   },
   "footer": {
-    "rights": "© 2024 Elite Cargo. Tous droits réservés.",
+    "rights": "Tous droits réservés.",
     "madeBy": "Créé par"
   },
   "gallery": {
     "title": "Notre Galerie",
     "subtitle": "Découvrez nos installations, nos opérations et notre équipe en action",
+    "scrollHint": "Faites défiler pour voir plus d'images",
+    "clickToEnlarge": "Cliquez pour agrandir",
     "categories": {
       "operations": "Opérations",
       "facilities": "Installations",
       "team": "Notre Équipe"
     }
+  },
+  "accessibility": {
+    "scrollLeft": "Défiler vers la gauche",
+    "scrollRight": "Défiler vers la droite",
+    "previousPage": "Page précédente",
+    "nextPage": "Page suivante"
   }
 }

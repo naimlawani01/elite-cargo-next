@@ -1,3 +1,33 @@
+# Elite Cargo - robots.txt
+# https://elite-cargo.net
+
+# Allow all crawlers
 User-agent: *
 Allow: /
+
+# Sitemap location
 Sitemap: https://elite-cargo.net/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow specific paths
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /src/
+
+# Allow important resources
+Allow: /images/
+Allow: /favicon/
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

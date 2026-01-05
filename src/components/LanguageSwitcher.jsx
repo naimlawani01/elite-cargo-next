@@ -1,26 +1,13 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRouter, usePathname } from 'next/navigation';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
-  const router = useRouter();
-  const pathname = usePathname();
-  const [currentLang, setCurrentLang] = useState('fr');
-
-  useEffect(() => {
-    // Extraire la langue actuelle du pathname
-    const lang = pathname.split('/')[1] || 'fr';
-    setCurrentLang(lang);
-    i18n.changeLanguage(lang);
-    
-    // Si la langue n'est pas française, rediriger vers le français
-    if (lang !== 'fr' && pathname === '/') {
-      router.push('/fr');
-    }
-  }, [pathname, i18n, router]);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { lang } = useParams();
+  const currentLang = lang || 'fr';
 
   const changeLanguage = (lng) => {
     // Changer la langue dans i18n
@@ -29,9 +16,10 @@ export default function LanguageSwitcher() {
     localStorage.setItem('language', lng);
     
     // Préserver la page actuelle lors du changement de langue
-    const currentPath = pathname.split('/').slice(2).join('/');
-    const newPath = currentPath ? `/${lng}/${currentPath}` : `/${lng}`;
-    router.push(newPath);
+    const pathParts = location.pathname.split('/');
+    pathParts[1] = lng; // Remplacer la langue
+    const newPath = pathParts.join('/') || `/${lng}`;
+    navigate(newPath);
   };
 
   return (
@@ -51,4 +39,5 @@ export default function LanguageSwitcher() {
       </button>
     </div>
   );
-} 
+}
+
