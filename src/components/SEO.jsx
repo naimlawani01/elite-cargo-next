@@ -51,6 +51,24 @@ export default function SEO({
       if (canonicalLink) {
         canonicalLink.setAttribute('href', canonical);
       }
+
+      // Mettre à jour les alternates hreflang pour CETTE page (fr / en / x-default)
+      try {
+        const url = new URL(canonical);
+        const parts = url.pathname.split('/'); // ['', 'fr', 'services', ...]
+        const withLang = (l) => {
+          const p = [...parts];
+          p[1] = l;
+          return url.origin + p.join('/');
+        };
+        const setAlt = (hreflang, href) => {
+          const el = document.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
+          if (el) el.setAttribute('href', href);
+        };
+        setAlt('fr', withLang('fr'));
+        setAlt('en', withLang('en'));
+        setAlt('x-default', withLang('fr'));
+      } catch { /* invalid URL */ }
     }
 
     // Mettre à jour la langue

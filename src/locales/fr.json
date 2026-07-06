@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Des solutions logistiques sans frontières",
-    "subtitle": "Depuis 1997, Elite Cargo est votre partenaire expert en fret aérien, transit et logistique, connectant l'Afrique de l'Ouest au monde avec fiabilité et excellence.",
+    "subtitle": "Depuis 1997, Elite Cargo achemine vos marchandises par air, mer et route, à l'import comme à l'export — entre l'Afrique de l'Ouest et le reste du monde, où que vous soyez.",
     "cta": "Demander un devis personnalisé",
     "scroll": "Défiler"
   },
@@ -17,12 +17,12 @@
   },
   "about": {
     "title": "À Propos",
-    "text1": "Elite Cargo est un groupe leader dans le domaine du fret aérien et de la logistique en Afrique de l'Ouest. Notre expertise de plus de 25 ans dans les métiers du fret aérien nous permet d'offrir des solutions logistiques complètes et personnalisées à nos clients.",
-    "text2": "Notre force réside dans notre réseau étendu de filiales stratégiquement positionnées en Guinée, au Sénégal, au Mali, en Sierra Leone et au Bénin. Cette présence régionale nous permet d'assurer une couverture optimale et un service de proximité. Notre équipe de professionnels qualifiés, combinée à notre infrastructure moderne, nous permet de garantir un service d'excellence et une satisfaction client maximale."
+    "text1": "Elite Cargo est un groupe leader du fret et de la logistique en Afrique de l'Ouest. Plus de 25 ans d'expertise dans le fret aérien, maritime et terrestre nous permettent d'offrir des solutions complètes et personnalisées, à l'import comme à l'export.",
+    "text2": "Notre force : un réseau de filiales stratégiquement implantées en Guinée, au Mali, au Bénin et en Sierra Leone, et des partenaires dans le monde entier. Où que se trouve votre marchandise, nous l'expédions ou la réceptionnons pour vous. Une équipe qualifiée et une infrastructure moderne garantissent un service d'excellence à chaque étape."
   },
   "services": {
     "title": "Nos Services",
-    "subtitle": "Découvrez notre gamme complète de services de fret aérien et logistique adaptés à vos besoins",
+    "subtitle": "Fret aérien, maritime et terrestre, transit, douane, déménagement et entreposage : une chaîne logistique complète, à l'import comme à l'export.",
     "freight": {
       "title": "Fret aérien",
       "description": "Gestion complète du fret sur les principales compagnies aériennes avec suivi et sécurité optimisés."
@@ -38,7 +38,7 @@
   },
   "stats": {
     "title": "Nos Chiffres",
-    "subtitle": "Des années d'expérience et une expertise reconnue dans le domaine du fret aérien",
+    "subtitle": "Plus de 25 ans d'expertise dans le fret et la logistique internationale.",
     "warehouses": {
       "value": "2400 m²",
       "label": "d'entrepôts"
@@ -65,7 +65,7 @@
     },
     "network": {
       "title": "Réseau mondial",
-      "desc": "Un maillage international grâce à nos partenaires."
+      "desc": "Import et export partout dans le monde, grâce à notre réseau de partenaires."
     },
     "expertise": {
       "title": "Expertise & Infrastructure",
@@ -92,7 +92,7 @@
   },
   "branches": {
     "title": "Nos Filiales",
-    "subtitle": "Un réseau étendu à travers l'Afrique de l'Ouest pour une couverture optimale",
+    "subtitle": "Quatre filiales en Afrique de l'Ouest et une portée mondiale : nous expédions et réceptionnons vos marchandises partout dans le monde.",
     "scrollHint": "Faites défiler pour découvrir nos branches",
     "guinea": {
       "country": "Guinée",

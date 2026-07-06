@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Logistics solutions without borders",
-    "subtitle": "Since 1997, Elite Cargo has been your expert partner in air freight, customs transit, and logistics, connecting West Africa to the world with reliability and excellence.",
+    "subtitle": "Since 1997, Elite Cargo moves your goods by air, sea and road — import and export alike — between West Africa and the rest of the world, wherever you are.",
     "cta": "Request a personalized quote",
     "scroll": "Scroll"
   },
@@ -17,12 +17,12 @@
   },
   "about": {
     "title": "About Us",
-    "text1": "Elite Cargo is a leading group in air freight and logistics in West Africa. Our 25+ years of expertise in air freight enables us to provide comprehensive and customized logistics solutions to our clients.",
-    "text2": "Our strength lies in our extensive network of strategically positioned subsidiaries in Guinea, Senegal, Mali, Sierra Leone, and Benin. This regional presence allows us to ensure optimal coverage and proximity service. Our team of qualified professionals, combined with our modern infrastructure, enables us to guarantee excellence in service and maximum customer satisfaction."
+    "text1": "Elite Cargo is a leading freight and logistics group in West Africa. Over 25 years of expertise in air, sea and land freight lets us deliver complete, tailored solutions — for both import and export.",
+    "text2": "Our strength: a network of subsidiaries strategically located in Guinea, Mali, Benin and Sierra Leone, plus partners worldwide. Wherever your goods are, we ship or receive them for you. A qualified team and modern infrastructure ensure excellence at every step."
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Discover our complete range of air freight and logistics services tailored to your needs",
+    "subtitle": "Air, sea and land freight, transit, customs, moving and warehousing: a complete logistics chain, for both import and export.",
     "freight": {
       "title": "Air Freight",
       "description": "Complete freight management on major airlines with optimized tracking and security."
@@ -38,7 +38,7 @@
   },
   "stats": {
     "title": "Our Numbers",
-    "subtitle": "Years of experience and recognized expertise in air freight",
+    "subtitle": "Over 25 years of expertise in international freight and logistics.",
     "warehouses": {
       "value": "2400 m²",
       "label": "of warehouses"
@@ -65,7 +65,7 @@
     },
     "network": {
       "title": "Global Network",
-      "desc": "International coverage thanks to our partners."
+      "desc": "Import and export anywhere in the world, through our partner network."
     },
     "expertise": {
       "title": "Expertise & Infrastructure",
@@ -92,7 +92,7 @@
   },
   "branches": {
     "title": "Our Branches",
-    "subtitle": "An extensive network across West Africa for optimal coverage",
+    "subtitle": "Four branches in West Africa and worldwide reach: we ship and receive your goods anywhere in the world.",
     "scrollHint": "Scroll to discover our branches",
     "guinea": {
       "country": "Guinea",
