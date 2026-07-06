@@ -1,212 +1,179 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import PillButton from './PillButton';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Header = () => {
+export default function Header() {
   const { t } = useTranslation();
   const location = useLocation();
-  const navigate = useNavigate();
   const { lang } = useParams();
-  const currentLang = lang || 'fr';
+  const currentLang = ['fr', 'en'].includes(lang) ? lang : 'fr';
+  const isFr = currentLang === 'fr';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Track scroll for header background
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navigationItems = [
+  const isHome = location.pathname === `/${currentLang}`;
+  // Transparent over the hero; solid otherwise or while the mobile menu is open.
+  const transparent = isHome && !isScrolled && !isMenuOpen;
+
+  const navItems = [
     { id: 'home', label: t('nav.home', 'Accueil') },
+    { id: 'services', label: t('nav.services', 'Services') },
+    { id: 'about', label: t('nav.about', 'À propos') },
     { id: 'gallery', label: t('nav.gallery') },
-    { id: 'contact', label: t('nav.contact') }
+    { id: 'contact', label: t('nav.contact') },
   ];
 
-  const handleNavigation = (id) => {
-    const newPath = id === 'home' ? `/${currentLang}` : `/${currentLang}/${id}`;
-    navigate(newPath);
-    setIsMenuOpen(false);
-  };
-
-  const isActive = (id) => {
-    if (id === 'home') return location.pathname === `/${currentLang}`;
-    return location.pathname === `/${currentLang}/${id}`;
-  };
+  const pathFor = (id) => (id === 'home' ? `/${currentLang}` : `/${currentLang}/${id}`);
+  const isActive = (id) => location.pathname === pathFor(id);
 
   return (
-    <>
-      {/* Top Bar - Contact Info */}
-      <div className="hidden lg:block bg-[#004D40] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-10 text-sm">
-            <div className="flex items-center gap-6">
-              <a href="tel:+224622652511" className="flex items-center gap-2 hover:text-white/80 transition-colors">
-                <Phone className="w-3.5 h-3.5" />
-                <span>+224 622 65 25 11</span>
-              </a>
-              <a href="mailto:info@elite-cargo.net" className="flex items-center gap-2 hover:text-white/80 transition-colors">
-                <Mail className="w-3.5 h-3.5" />
-                <span>info@elite-cargo.net</span>
-              </a>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-white/70">Leader du fret aérien depuis 1997</span>
-              <div className="w-px h-4 bg-white/30" />
-              <LanguageSwitcher />
-            </div>
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-500 ${
+        transparent
+          ? 'bg-transparent'
+          : 'bg-paper/85 backdrop-blur-md border-b border-ink/10'
+      }`}
+    >
+      <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-[5.5rem]">
+          {/* Brand */}
+          <Link to={`/${currentLang}`} className="flex items-center gap-3 shrink-0 group">
+            <img
+              src="/images/elite.svg"
+              alt="Elite Cargo"
+              className={`h-9 w-auto transition-all duration-500 ${transparent ? 'brightness-0 invert' : ''}`}
+            />
+            <span className="flex items-baseline gap-2">
+              <span
+                className={`font-display font-bold text-lg tracking-tight transition-colors duration-500 ${
+                  transparent ? 'text-band-ink' : 'text-accent'
+                }`}
+              >
+                Elite Cargo
+              </span>
+              <span
+                className={`hidden sm:inline font-mono text-[0.58rem] tracking-[0.2em] transition-colors duration-500 ${
+                  transparent ? 'text-band-ink/60' : 'text-ink-soft'
+                }`}
+              >
+                {isFr ? 'DEPUIS 1997' : 'SINCE 1997'}
+              </span>
+            </span>
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+            {navItems.map((item) => (
+              <Link
+                key={item.id}
+                to={pathFor(item.id)}
+                className={`relative text-sm font-medium transition-colors duration-300 group ${
+                  transparent
+                    ? 'text-band-ink/85 hover:text-band-ink'
+                    : isActive(item.id)
+                      ? 'text-accent'
+                      : 'text-ink-soft hover:text-ink'
+                }`}
+              >
+                {item.label}
+                <span
+                  className={`absolute -bottom-1.5 left-0 h-px bg-current transition-transform duration-300 origin-left ${
+                    isActive(item.id) ? 'w-full scale-x-100' : 'w-full scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
+              </Link>
+            ))}
+          </nav>
+
+          {/* Desktop right */}
+          <div className="hidden lg:flex items-center gap-5 shrink-0">
+            <a
+              href="tel:+224622652511"
+              className={`hidden xl:inline font-mono text-xs tracking-wide transition-colors ${
+                transparent ? 'text-band-ink/80 hover:text-band-ink' : 'text-ink-soft hover:text-ink'
+              }`}
+            >
+              +224 622 65 25 11
+            </a>
+            <LanguageSwitcher inverted={transparent} />
+            <PillButton
+              to={`/${currentLang}/contact`}
+              variant={transparent ? 'light' : 'solid'}
+              showIcon={false}
+            >
+              {t('hero.cta', 'Demander un devis')}
+            </PillButton>
+          </div>
+
+          {/* Mobile toggles */}
+          <div className="flex lg:hidden items-center gap-3 shrink-0">
+            <LanguageSwitcher inverted={transparent} />
+            <button
+              onClick={() => setIsMenuOpen((v) => !v)}
+              aria-label="Menu"
+              className={`p-2 rounded-full transition-colors ${
+                transparent ? 'text-band-ink hover:bg-band-ink/10' : 'text-ink hover:bg-ink/10'
+              }`}
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Main Header */}
-      <header 
-        className={`sticky top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white shadow-lg' 
-            : 'bg-white/95 backdrop-blur-lg'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo and Title */}
-            <Link to={`/${currentLang}`} className="flex items-center space-x-4 min-w-0 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-[#004D40]/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" />
-                <img
-                  src="/images/elite.svg"
-                  alt="Elite Cargo"
-                  className="h-12 w-auto flex-shrink-0 relative z-10"
-                />
-              </div>
-              <div className="flex flex-col min-w-0">
-                <span className="text-2xl font-bold text-[#004D40] font-display tracking-tight">
-                  Elite Cargo
-                </span>
-                <span className="text-xs text-slate-500 font-medium tracking-wide uppercase">
-                  Transport & Logistique
-                </span>
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1">
-              {navigationItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavigation(item.id)}
-                  className={`relative px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 whitespace-nowrap group
-                    ${isActive(item.id)
-                      ? 'text-[#004D40]' 
-                      : 'text-slate-600 hover:text-[#004D40]'
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-paper border-t border-ink/10"
+          >
+            <div className="px-5 sm:px-8 py-6 flex flex-col gap-1">
+              {navItems.map((item, i) => (
+                <motion.div key={item.id} initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.06 }}>
+                  <Link
+                    to={pathFor(item.id)}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`block py-3 text-2xl font-display font-semibold tracking-tight transition-colors ${
+                      isActive(item.id) ? 'text-accent' : 'text-ink hover:text-accent'
                     }`}
-                >
-                  {item.label}
-                  {/* Active indicator */}
-                  <span 
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-[#004D40] rounded-full transition-all duration-300 ${
-                      isActive(item.id) ? 'w-6' : 'w-0 group-hover:w-4'
-                    }`}
-                  />
-                </button>
-              ))}
-              
-              {/* CTA Button */}
-              <Link 
-                to={`/${currentLang}/contact`}
-                className="ml-4 px-6 py-2.5 bg-[#004D40] text-white text-sm font-semibold rounded-lg hover:bg-[#00695C] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-              >
-                {t('hero.cta', 'Demander un devis')}
-              </Link>
-            </nav>
-
-            {/* Mobile: Language + Menu */}
-            <div className="flex md:hidden items-center gap-3">
-              <LanguageSwitcher />
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2.5 text-slate-700 hover:text-[#004D40] hover:bg-slate-100 rounded-lg transition-colors"
-                aria-label="Menu"
-              >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
-            >
-              <div className="px-4 py-6 space-y-2">
-                {navigationItems.map((item, index) => (
-                  <motion.button
-                    key={item.id}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    onClick={() => handleNavigation(item.id)}
-                    className={`w-full text-left px-4 py-3 text-base font-medium rounded-lg transition-all duration-300
-                      ${isActive(item.id)
-                        ? 'text-[#004D40] bg-[#004D40]/5 font-semibold' 
-                        : 'text-slate-700 hover:text-[#004D40] hover:bg-slate-50'
-                      }`}
                   >
                     {item.label}
-                  </motion.button>
-                ))}
-                
-                {/* Mobile CTA */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navigationItems.length * 0.1 }}
-                  className="pt-4 mt-4 border-t border-slate-100"
-                >
-                  <Link 
-                    to={`/${currentLang}/contact`}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block w-full text-center px-4 py-3 bg-[#004D40] text-white font-semibold rounded-lg hover:bg-[#00695C] transition-colors"
-                  >
-                    {t('hero.cta', 'Demander un devis')}
                   </Link>
                 </motion.div>
-
-                {/* Mobile Contact Info */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                  className="pt-4 mt-4 border-t border-slate-100 space-y-3"
+              ))}
+              <div className="mt-5 pt-5 border-t border-ink/10 flex flex-col gap-4">
+                <PillButton
+                  to={`/${currentLang}/contact`}
+                  variant="solid"
+                  showIcon={false}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full"
                 >
-                  <a href="tel:+224622652511" className="flex items-center gap-3 px-4 py-2 text-slate-600 hover:text-[#004D40] transition-colors">
-                    <Phone className="w-4 h-4" />
-                    <span className="text-sm">+224 622 65 25 11</span>
-                  </a>
-                  <a href="mailto:info@elite-cargo.net" className="flex items-center gap-3 px-4 py-2 text-slate-600 hover:text-[#004D40] transition-colors">
-                    <Mail className="w-4 h-4" />
-                    <span className="text-sm">info@elite-cargo.net</span>
-                  </a>
-                </motion.div>
+                  {t('hero.cta', 'Demander un devis')}
+                </PillButton>
+                <a href="tel:+224622652511" className="font-mono text-xs tracking-wide text-ink-soft">
+                  +224 622 65 25 11
+                </a>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-    </>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
-};
-
-export default Header;
+}
