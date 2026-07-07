@@ -23,8 +23,8 @@ const pages = {
     en: { t: 'Elite Cargo | Air Freight & Logistics Leader in West Africa since 1997', d: 'Elite Cargo, leader in air, sea and land freight since 1997. Customs, transit and international moving in Guinea, Mali, Benin and Sierra Leone.' },
   },
   services: {
-    fr: { t: 'Nos Services | Fret Aérien, Maritime, Transit & Douane — Elite Cargo', d: "Fret aérien et maritime, transit et dédouanement, déménagement international et entreposage à Conakry, Guinée. Services logistiques Elite Cargo depuis 1997." },
-    en: { t: 'Our Services | Air & Sea Freight, Transit & Customs — Elite Cargo', d: 'Air and sea freight, transit and customs clearance, international moving and warehousing in Conakry, Guinea. Elite Cargo logistics since 1997.' },
+    fr: { t: 'Nos Services | Fret Aérien & Maritime, Transit, GSA — Elite Cargo', d: "Fret aérien et maritime, transit et douane, représentation GSA/CSA, chaîne du froid, marchandises réglementées et déménagement à Conakry, Guinée. Elite Cargo depuis 1997." },
+    en: { t: 'Our Services | Air & Sea Freight, Transit, GSA — Elite Cargo', d: 'Air and sea freight, transit and customs, GSA/CSA representation, cold chain, regulated cargo and moving in Conakry, Guinea. Elite Cargo since 1997.' },
   },
   about: {
     fr: { t: "À Propos | Elite Cargo — Transitaire & Logistique depuis 1997", d: "Depuis 1997, Elite Cargo est un groupe leader du fret aérien et de la logistique en Afrique de l'Ouest, avec des filiales en Guinée, Mali, Bénin et Sierra Leone." },

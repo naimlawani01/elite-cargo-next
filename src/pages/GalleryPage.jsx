@@ -30,7 +30,7 @@ export default function GalleryPage() {
       images: [
         { src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop', alt: isFr ? 'Opérations aériennes' : 'Air operations' },
         { src: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?q=80&w=1600&auto=format&fit=crop', alt: isFr ? 'Logistique' : 'Logistics' },
-        { src: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1600&auto=format&fit=crop', alt: isFr ? 'Fret aérien' : 'Air freight' },
+        { src: 'https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=1600&auto=format&fit=crop', alt: isFr ? 'Fret aérien' : 'Air freight' },
         { src: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1600&auto=format&fit=crop', alt: isFr ? 'Entrepôt' : 'Warehouse' },
       ],
     },

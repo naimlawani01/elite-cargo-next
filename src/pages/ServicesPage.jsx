@@ -27,64 +27,74 @@ export default function ServicesPage() {
       code: '01',
       name: isFr ? 'Fret aérien' : 'Air freight',
       desc: isFr
-        ? "Gestion complète du fret aérien depuis l'aéroport de Conakry sur les principales compagnies (Air France, Ethiopian Airlines, Royal Air Maroc, Brussels Airlines, ASKY). Suivi en temps réel, assurance cargo et solutions express pour vos envois urgents."
-        : 'End-to-end air freight from Conakry airport on major carriers (Air France, Ethiopian Airlines, Royal Air Maroc, Brussels Airlines, ASKY). Real-time tracking, cargo insurance and express solutions for urgent shipments.',
-      features: isFr ? ['Suivi temps réel', 'Assurance cargo', 'Import / Export', 'Express'] : ['Real-time tracking', 'Cargo insurance', 'Import / Export', 'Express'],
-      img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop',
-      cap: isFr ? 'Chargement 737F — Conakry' : 'Loading 737F — Conakry',
+        ? "Notre cœur de métier. Nous acheminons votre fret aérien depuis Conakry vers le monde entier — Amérique du Nord, Europe, Golfe, Asie et Afrique. Taxation, documentation et suivi maîtrisés, à l'import comme à l'export. Le maritime et le terrestre viennent en complément."
+        : 'Our core business. We carry your air freight from Conakry to the whole world — North America, Europe, the Gulf, Asia and Africa. Cargo rating, documentation and tracking under control, import and export. Sea and land come as a complement.',
+      features: isFr ? ['Export mondial', 'Import', 'Suivi', 'Express'] : ['Worldwide export', 'Import', 'Tracking', 'Express'],
+      img: 'https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=1600&auto=format&fit=crop',
+      cap: isFr ? 'Chargement export — Conakry' : 'Export loading — Conakry',
     },
     {
       code: '02',
-      name: isFr ? 'Fret maritime & terrestre' : 'Sea & land freight',
+      name: isFr ? 'Représentation fret (GSA / CSA)' : 'Cargo representation (GSA / CSA)',
       desc: isFr
-        ? 'Groupage (LCL) ou conteneur complet (FCL), et acheminement routier régional en Afrique de l\'Ouest. Des solutions au budget maîtrisé pour vos volumes les plus lourds, du port à la porte.'
-        : 'Groupage (LCL) or full container load (FCL), plus regional road haulage across West Africa. Budget-controlled solutions for your heaviest volumes, from port to door.',
-      features: isFr ? ['FCL / LCL', 'Porte-à-porte', 'Régional', 'Suivi'] : ['FCL / LCL', 'Door-to-door', 'Regional', 'Tracking'],
-      img: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1600&auto=format&fit=crop',
-      cap: isFr ? 'Terminal à conteneurs' : 'Container terminal',
+        ? "Vente et traitement du fret pour les compagnies aériennes : acceptation, manifeste export, réception et suivi des documents import. Providing airline cargo sales and service management — sur système Cargo Spot."
+        : 'Cargo sales and handling for airlines: acceptance, export manifest, import document receipt and tracking. Providing airline cargo sales and service management — on the Cargo Spot system.',
+      features: isFr ? ['GSA', 'CSA', 'Cargo Spot', 'Acceptation'] : ['GSA', 'CSA', 'Cargo Spot', 'Acceptance'],
+      img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1600&auto=format&fit=crop',
+      cap: isFr ? 'Traitement fret export' : 'Export cargo handling',
     },
     {
       code: '03',
       name: isFr ? 'Transit & Douane' : 'Transit & Customs',
       desc: isFr
-        ? "Formalités douanières, dédouanement import/export, documentation spécialisée et conseil réglementaire. Forts de notre expérience de transitaire, nous levons les frictions administratives pour que vos marchandises circulent sans délai."
-        : 'Customs formalities, import/export clearance, specialised documentation and regulatory advice. With our freight-forwarding experience, we remove administrative friction so your goods move without delay.',
-      features: isFr ? ['Dédouanement', 'Documentation', 'Conseil réglementaire', 'Import / Export'] : ['Clearance', 'Documentation', 'Regulatory advice', 'Import / Export'],
-      img: 'https://images.unsplash.com/photo-1605732562742-3023a888e56e?q=80&w=1600&auto=format&fit=crop',
+        ? "Dédouanement import/export, formalités, documentation spécialisée, livraison et intermédiation. Forts de notre expérience de transitaire, nous levons les frictions administratives pour que vos marchandises circulent sans délai."
+        : 'Import/export clearance, formalities, specialised documentation, delivery and brokerage. With our freight-forwarding experience, we remove administrative friction so your goods move without delay.',
+      features: isFr ? ['Dédouanement', 'Documentation', 'Livraison', 'Intermédiation'] : ['Clearance', 'Documentation', 'Delivery', 'Brokerage'],
+      img: 'https://images.unsplash.com/photo-1595246140625-573b715d11dc?q=80&w=1600&auto=format&fit=crop',
       cap: isFr ? 'Aérogare de fret, Gbessia' : 'Cargo terminal, Gbessia',
     },
     {
       code: '04',
-      name: isFr ? 'Déménagement international' : 'International moving',
+      name: isFr ? 'Fret périssable & chaîne du froid' : 'Perishables & cold chain',
       desc: isFr
-        ? 'Emballage professionnel, stockage sécurisé et service porte-à-porte pour les particuliers comme pour les entreprises. Nous accompagnons chaque étape de votre déménagement à l\'international.'
-        : 'Professional packing, secure storage and door-to-door service for individuals and companies alike. We handle every step of your international relocation.',
-      features: isFr ? ['Emballage pro', 'Stockage sécurisé', 'Porte-à-porte', 'Assurance'] : ['Pro packing', 'Secure storage', 'Door-to-door', 'Insurance'],
-      img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1600&auto=format&fit=crop',
-      cap: isFr ? 'Porte-à-porte international' : 'Door-to-door, worldwide',
+        ? "Traitement du fret périssable avec accès aux chambres froides (positive et négative) côté piste. Poisson frais et produits de la mer vers l'Europe — dans le strict respect de la chaîne du froid, par un personnel formé."
+        : 'Perishable freight handling with access to planeside cold rooms (positive and negative). Fresh fish and seafood to Europe — under a strict cold chain, by trained staff.',
+      features: isFr ? ['Chaîne du froid', 'Chambres froides', 'Poisson frais', 'Périssable'] : ['Cold chain', 'Cold rooms', 'Fresh fish', 'Perishable'],
+      img: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=1600&auto=format&fit=crop',
+      cap: isFr ? 'Chaîne du froid — côté piste' : 'Cold chain — planeside',
     },
     {
       code: '05',
-      name: isFr ? 'Entreposage & Distribution' : 'Warehousing & Distribution',
+      name: isFr ? 'Marchandises spéciales & réglementées' : 'Special & regulated cargo',
       desc: isFr
-        ? "2 400 m² d'entrepôts sécurisés pour le stockage, la préparation de commandes et la distribution de vos marchandises en Afrique de l'Ouest. Des options flexibles adaptées à vos flux."
-        : '2,400 m² of secured warehousing for storage, order preparation and distribution across West Africa. Flexible options tailored to your flows.',
-      features: isFr ? ['2 400 m²', 'Stockage sécurisé', 'Préparation', 'Distribution'] : ['2,400 m²', 'Secure storage', 'Fulfilment', 'Distribution'],
+        ? "Marchandises réglementées (DGR), animaux vivants, échantillons miniers et métaux précieux — dont l'or vers le Golfe. Un personnel certifié en acceptation du fret, sûreté aéroportuaire et taxation pour vos envois les plus sensibles."
+        : 'Regulated goods (DGR), live animals, mining samples and precious metals — including gold to the Gulf. Staff certified in freight acceptance, airport security and cargo rating for your most sensitive shipments.',
+      features: isFr ? ['DGR', 'Animaux vivants', 'Échantillons miniers', 'Métaux précieux'] : ['DGR', 'Live animals', 'Mining samples', 'Precious metals'],
       img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1600&auto=format&fit=crop',
       cap: isFr ? 'Entrepôt sécurisé — 2 400 m²' : 'Secured warehouse — 2,400 m²',
+    },
+    {
+      code: '06',
+      name: isFr ? 'Déménagement & garde-meuble' : 'Moving & storage',
+      desc: isFr
+        ? "Déménagement local et international : emballage et déballage, fournitures, convoyage et garde-meuble sécurisé. Enlèvement et livraison à domicile, pour les particuliers comme pour les entreprises."
+        : 'Local and international moving: packing and unpacking, supplies, convoyage and secure furniture storage. Home pickup and delivery, for individuals and companies alike.',
+      features: isFr ? ['International', 'Emballage', 'Garde-meuble', 'Porte-à-porte'] : ['International', 'Packing', 'Storage', 'Door-to-door'],
+      img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1600&auto=format&fit=crop',
+      cap: isFr ? 'Emballage & convoyage' : 'Packing & convoyage',
     },
   ];
 
   const seoData = {
     fr: {
-      title: 'Nos Services | Fret Aérien, Maritime, Transit & Douane — Elite Cargo',
-      description: "Fret aérien et maritime, transit et dédouanement, déménagement international et entreposage à Conakry, Guinée. Découvrez les services logistiques d'Elite Cargo depuis 1997.",
-      keywords: 'fret aérien Guinée, fret maritime Conakry, transit douane Guinée, dédouanement Conakry, déménagement international Guinée, entreposage Conakry',
+      title: 'Nos Services | Fret Aérien & Maritime, Transit, GSA — Elite Cargo',
+      description: "Fret aérien et maritime, transit et douane, représentation GSA/CSA, chaîne du froid, marchandises réglementées et déménagement à Conakry, Guinée. Elite Cargo depuis 1997.",
+      keywords: 'fret aérien Guinée, fret maritime Conakry, transit douane Guinée, dédouanement Conakry, GSA fret Conakry, chaîne du froid Guinée, fret périssable poisson, déménagement international Guinée',
     },
     en: {
-      title: 'Our Services | Air & Sea Freight, Transit & Customs — Elite Cargo',
-      description: 'Air and sea freight, transit and customs clearance, international moving and warehousing in Conakry, Guinea. Discover Elite Cargo logistics services since 1997.',
-      keywords: 'air freight Guinea, sea freight Conakry, customs transit Guinea, clearance Conakry, international moving Guinea, warehousing Conakry',
+      title: 'Our Services | Air & Sea Freight, Transit, GSA — Elite Cargo',
+      description: 'Air and sea freight, transit and customs, GSA/CSA representation, cold chain, regulated cargo and moving in Conakry, Guinea. Elite Cargo since 1997.',
+      keywords: 'air freight Guinea, sea freight Conakry, customs transit Guinea, cargo GSA Conakry, cold chain Guinea, perishable freight fish, international moving Guinea',
     },
   };
   const s = seoData[currentLang] || seoData.fr;
