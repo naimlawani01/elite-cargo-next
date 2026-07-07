@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Logistics solutions without borders",
-    "subtitle": "Since 1997, Elite Cargo moves your goods by air, sea and road — import and export alike — between West Africa and the rest of the world, wherever you are.",
+    "subtitle": "Since 1997, Elite Cargo flies your air freight from Conakry to the whole world, and handles transit, customs and moving — import and export alike, wherever you are.",
     "cta": "Request a personalized quote",
     "scroll": "Scroll"
   },
@@ -22,7 +22,7 @@
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Air, sea and land freight, transit, customs, moving and warehousing: a complete logistics chain, for both import and export.",
+    "subtitle": "Air freight to the whole world — plus GSA representation, transit, customs, cold chain, special cargo and moving.",
     "freight": {
       "title": "Air Freight",
       "description": "Complete freight management on major airlines with optimized tracking and security."
@@ -65,7 +65,7 @@
     },
     "network": {
       "title": "Global Network",
-      "desc": "Import and export anywhere in the world, through our partner network."
+      "desc": "Member of the World Freight Network — over 150 partners to import and export anywhere in the world."
     },
     "expertise": {
       "title": "Expertise & Infrastructure",
@@ -92,7 +92,7 @@
   },
   "branches": {
     "title": "Our Branches",
-    "subtitle": "Four branches in West Africa and worldwide reach: we ship and receive your goods anywhere in the world.",
+    "subtitle": "Four branches in West Africa plus the World Freight Network — over 150 partners to ship and receive your goods anywhere in the world.",
     "scrollHint": "Scroll to discover our branches",
     "guinea": {
       "country": "Guinea",

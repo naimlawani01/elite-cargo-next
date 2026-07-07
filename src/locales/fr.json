@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Des solutions logistiques sans frontières",
-    "subtitle": "Depuis 1997, Elite Cargo achemine vos marchandises par air, mer et route, à l'import comme à l'export — entre l'Afrique de l'Ouest et le reste du monde, où que vous soyez.",
+    "subtitle": "Depuis 1997, Elite Cargo fait voyager votre fret aérien depuis Conakry vers le monde entier, et assure transit, douane et déménagement — à l'import comme à l'export, où que vous soyez.",
     "cta": "Demander un devis personnalisé",
     "scroll": "Défiler"
   },
@@ -22,7 +22,7 @@
   },
   "services": {
     "title": "Nos Services",
-    "subtitle": "Fret aérien, maritime et terrestre, transit, douane, déménagement et entreposage : une chaîne logistique complète, à l'import comme à l'export.",
+    "subtitle": "Le fret aérien vers le monde entier — et la représentation GSA, le transit, la douane, la chaîne du froid, les marchandises spéciales et le déménagement.",
     "freight": {
       "title": "Fret aérien",
       "description": "Gestion complète du fret sur les principales compagnies aériennes avec suivi et sécurité optimisés."
@@ -65,7 +65,7 @@
     },
     "network": {
       "title": "Réseau mondial",
-      "desc": "Import et export partout dans le monde, grâce à notre réseau de partenaires."
+      "desc": "Membre du World Freight Network — plus de 150 partenaires pour importer et exporter partout dans le monde."
     },
     "expertise": {
       "title": "Expertise & Infrastructure",
@@ -92,7 +92,7 @@
   },
   "branches": {
     "title": "Nos Filiales",
-    "subtitle": "Quatre filiales en Afrique de l'Ouest et une portée mondiale : nous expédions et réceptionnons vos marchandises partout dans le monde.",
+    "subtitle": "Quatre filiales en Afrique de l'Ouest et le World Freight Network — plus de 150 partenaires pour expédier et réceptionner vos marchandises partout dans le monde.",
     "scrollHint": "Faites défiler pour découvrir nos branches",
     "guinea": {
       "country": "Guinée",

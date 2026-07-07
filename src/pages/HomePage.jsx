@@ -10,12 +10,12 @@ import Reveal from '../components/Reveal';
 import Frame from '../components/Frame';
 import SEO from '../components/SEO';
 
-// Stock placeholders — swap for real Elite Cargo photography (HD).
+// Stock placeholders (air-freight focused) — swap for real Elite Cargo photography (HD).
 const IMG = {
   hero: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2400&auto=format&fit=crop',
-  about: 'https://images.unsplash.com/photo-1605732562742-3023a888e56e?q=80&w=1600&auto=format&fit=crop',
-  air: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop',
-  customs: 'https://images.unsplash.com/photo-1605732562742-3023a888e56e?q=80&w=1600&auto=format&fit=crop',
+  about: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1600&auto=format&fit=crop',
+  air: 'https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=1600&auto=format&fit=crop',
+  customs: 'https://images.unsplash.com/photo-1595246140625-573b715d11dc?q=80&w=1600&auto=format&fit=crop',
   moving: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1600&auto=format&fit=crop',
 };
 
@@ -68,12 +68,6 @@ export default function HomePage() {
     { code: 'FNA', city: 'Freetown', name: t('branches.sierraLeone.name'), meta: 'Sierra Leone · 8.484°N' },
   ];
 
-  const team = [
-    { name: t('team.members.director.name'), role: t('team.members.director.role'), img: '/images/team/aminouLawani.png' },
-    { name: t('team.members.admin.name'), role: t('team.members.admin.role'), img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop' },
-    { name: t('team.members.operations.name'), role: t('team.members.operations.role'), img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop' },
-  ];
-
   const partners = [
     { name: 'Air France', logo: 'https://cdn.brandfetch.io/idddYhP85r/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B' },
     { name: 'Ethiopian Airlines', logo: 'https://cdn.brandfetch.io/idA9s40f4v/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B' },
@@ -113,7 +107,7 @@ export default function HomePage() {
         <div className="absolute top-[6.5rem] inset-x-0 z-10">
           <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 flex justify-between text-band-ink/70">
             <span className="mono-meta">CKY · 9.576°N 13.612°O</span>
-            <span className="mono-meta hidden sm:block">AIR — SEA — LAND</span>
+            <span className="mono-meta hidden sm:block">CDG · DXB · JFK · YUL · CMN</span>
           </div>
         </div>
 
@@ -167,12 +161,22 @@ export default function HomePage() {
               <Reveal>
                 <span className="eyebrow mb-6">{isFr ? 'À propos' : 'About us'}</span>
                 <h2 className="font-display font-semibold tracking-tight leading-[1.02] text-[clamp(1.9rem,5vw,3.6rem)] max-w-[18ch] text-balance">
-                  Vingt-cinq ans à <span className="font-serif italic font-normal text-accent">relier</span> les continents.
+                  {isFr ? (
+                    <>Nous connaissons chaque <span className="font-serif italic font-normal text-accent">étape</span> du voyage.</>
+                  ) : (
+                    <>We know every <span className="font-serif italic font-normal text-accent">step</span> of the journey.</>
+                  )}
                 </h2>
               </Reveal>
-              <Reveal delay={0.1} className="mt-8 space-y-5 text-ink-soft text-[1.02rem] leading-relaxed max-w-[52ch]">
-                <p>{t('about.text1')}</p>
-                <p>{t('about.text2')}</p>
+              <Reveal delay={0.1} className="mt-8 text-ink-soft text-[1.02rem] leading-relaxed max-w-[50ch]">
+                <p>
+                  {isFr
+                    ? "Du colis express à l'expédition la plus sensible, Elite Cargo fait voyager votre fret aérien depuis Conakry vers le monde entier — de Paris à Dubaï, de New York à Johannesburg. À l'import comme à l'export, depuis 1997."
+                    : 'From an express parcel to your most sensitive shipment, Elite Cargo flies your air freight from Conakry to the whole world — from Paris to Dubai, New York to Johannesburg. Import and export alike, since 1997.'}
+                </p>
+                <div className="mt-8">
+                  <PillButton to={`/${currentLang}/about`} variant="outline">{isFr ? 'Notre histoire' : 'Our story'}</PillButton>
+                </div>
               </Reveal>
             </div>
 
@@ -275,24 +279,6 @@ export default function HomePage() {
                   </span>
                   <span className="mono-meta text-right">{b.meta}</span>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ==================== TEAM ==================== */}
-      <section id="team" className="py-[clamp(4.5rem,12vw,9rem)] border-t border-ink/10">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
-          <SectionTitle label={isFr ? 'Équipe' : 'Team'} subtitle={t('team.subtitle')}>
-            {t('team.title')}
-          </SectionTitle>
-          <div className="mt-[clamp(2.5rem,6vw,4rem)] grid sm:grid-cols-3 gap-6">
-            {team.map((m, i) => (
-              <Reveal key={i} delay={i * 0.1}>
-                <Frame src={m.img} alt={m.name} className="aspect-[4/5]" />
-                <h3 className="font-display font-semibold tracking-tight text-xl mt-4">{m.name}</h3>
-                <p className="mono-meta text-accent mt-1">{m.role}</p>
               </Reveal>
             ))}
           </div>

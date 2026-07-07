@@ -37,6 +37,16 @@ yarn-error.log*
 # vercel
 .vercel
 
+# source business documents (reference only — may contain client data, never commit)
+*.docx
+*.doc
+*.ppt
+*.pptx
+*.xlsx
+*.xls
+/*.pdf
+rapport_awb_*
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

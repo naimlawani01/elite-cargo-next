@@ -23,11 +23,49 @@ export default function AboutPage() {
     }
   }, [lang, i18n]);
 
-  const stats = [
-    { n: '25', u: isFr ? 'ans' : 'yrs', l: t('stats.experience.label', "d'expérience") },
-    { n: '2 400', u: 'm²', l: t('stats.warehouses.label', "d'entrepôts") },
-    { n: '4', u: isFr ? 'filiales' : 'branches', l: isFr ? "en Afrique de l'Ouest, portée mondiale" : 'in West Africa, worldwide reach' },
-    { n: '15', u: '+', l: t('stats.employees.label', 'employés formés') },
+  const journey = [
+    {
+      year: '1996',
+      h: isFr ? 'Les débuts, avec Royal Air Maroc' : 'The beginning, with Royal Air Maroc',
+      d: isFr
+        ? "Notre parcours de représentant fret (GSA) commence à l'aéroport de Conakry avec Royal Air Maroc."
+        : 'Our journey as a cargo GSA begins at Conakry airport with Royal Air Maroc.',
+    },
+    {
+      year: '1997',
+      h: isFr ? 'Naissance d\'Elite Cargo' : 'Elite Cargo is born',
+      d: isFr
+        ? "De Guinée Handling à Guinée Cargo Handling, puis Elite Cargo : une structure dédiée au fret aérien, au transit et au déménagement."
+        : 'From Guinée Handling to Guinée Cargo Handling, then Elite Cargo: a structure dedicated to air freight, transit and moving.',
+    },
+    {
+      year: '2003',
+      h: isFr ? 'GSA à Conakry' : 'GSA in Conakry',
+      d: isFr
+        ? "Contrat de représentation GSA à Conakry et reconnaissance de notre savoir-faire dans le traitement du fret."
+        : 'GSA representation contract in Conakry and recognition of our cargo-handling expertise.',
+    },
+    {
+      year: '2014',
+      h: isFr ? "Certificat d'excellence" : 'Certificate of excellence',
+      d: isFr
+        ? "Brussels Airlines Cargo nous décerne un certificat d'excellence pour la qualité de notre traitement fret."
+        : 'Brussels Airlines Cargo awards us a certificate of excellence for our cargo-handling quality.',
+    },
+    {
+      year: '2018',
+      h: isFr ? 'GSA Ethiopian Airlines' : 'Ethiopian Airlines GSA',
+      d: isFr
+        ? "Nous devenons GSA d'Ethiopian Airlines, élargissant notre réseau de compagnies représentées."
+        : 'We become Ethiopian Airlines GSA, expanding our network of represented carriers.',
+    },
+    {
+      year: isFr ? "Aujourd'hui" : 'Today',
+      h: isFr ? 'Un réseau mondial' : 'A worldwide network',
+      d: isFr
+        ? "Quatre filiales (Conakry, Bamako, Cotonou, Freetown), 2 400 m² d'entrepôts et membre du World Freight Network — plus de 150 partenaires pour expédier et réceptionner partout dans le monde."
+        : 'Four branches (Conakry, Bamako, Cotonou, Freetown), 2,400 m² of warehousing and a member of the World Freight Network — over 150 partners to ship and receive anywhere in the world.',
+    },
   ];
 
   const values = [
@@ -45,12 +83,12 @@ export default function AboutPage() {
 
   const seoData = {
     fr: {
-      title: "À Propos | Elite Cargo — Transitaire & Logistique en Afrique de l'Ouest depuis 1997",
+      title: "À Propos | Elite Cargo — Transitaire & Logistique depuis 1997",
       description: "Depuis 1997, Elite Cargo est un groupe leader du fret aérien et de la logistique en Afrique de l'Ouest, avec des filiales en Guinée, Mali, Bénin et Sierra Leone.",
       keywords: 'à propos Elite Cargo, transitaire Guinée, entreprise fret Conakry, logistique Afrique Ouest',
     },
     en: {
-      title: 'About | Elite Cargo — Freight Forwarder & Logistics in West Africa since 1997',
+      title: 'About | Elite Cargo — Freight Forwarder & Logistics since 1997',
       description: 'Since 1997, Elite Cargo is a leading air freight and logistics group in West Africa, with branches in Guinea, Mali, Benin and Sierra Leone.',
       keywords: 'about Elite Cargo, freight forwarder Guinea, Conakry freight company, West Africa logistics',
     },
@@ -64,7 +102,7 @@ export default function AboutPage() {
 
       <PageIntro
         label={isFr ? 'À propos' : 'About us'}
-        title={isFr ? 'Vingt-cinq ans à relier les continents.' : 'Twenty-five years connecting continents.'}
+        title={isFr ? 'Une histoire de confiance, depuis 1997.' : 'A story of trust, since 1997.'}
         subtitle={t('about.text1')}
       />
 
@@ -79,25 +117,48 @@ export default function AboutPage() {
               </div>
             </Reveal>
             <Reveal delay={0.1} className="order-1 lg:order-2">
-              <Frame src="https://images.unsplash.com/photo-1605732562742-3023a888e56e?q=80&w=1600&auto=format&fit=crop" alt="Elite Cargo" caption={isFr ? 'Aérogare de fret — Conakry' : 'Cargo terminal — Conakry'} code="CKY" className="aspect-[4/5]" />
+              <Frame src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1600&auto=format&fit=crop" alt="Elite Cargo" caption={isFr ? 'Aérogare de fret — Conakry' : 'Cargo terminal — Conakry'} code="CKY" className="aspect-[4/5]" />
             </Reveal>
           </div>
         </section>
 
-        {/* Stats */}
+        {/* Journey / timeline */}
         <section className="py-[clamp(3.5rem,8vw,6rem)] border-t border-ink/10">
           <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
-            <span className="eyebrow mb-10 block">{isFr ? 'En chiffres' : 'By the numbers'}</span>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
-              {stats.map((st, i) => (
-                <Reveal key={i} delay={i * 0.08} className="border-t border-ink/15 pt-5">
-                  <div className="font-display font-bold tracking-[-0.04em] leading-none text-[clamp(2.8rem,8vw,5rem)] tabular-nums">
-                    {st.n}<span className="font-serif italic font-normal text-[0.32em] text-sand ml-1">{st.u}</span>
+            <SectionTitle label={isFr ? 'Notre parcours' : 'Our journey'}>
+              {isFr ? 'De Conakry, vers le monde.' : 'From Conakry, to the world.'}
+            </SectionTitle>
+            <div className="mt-[clamp(2.5rem,6vw,4rem)]">
+              {journey.map((step, i) => (
+                <Reveal key={i} delay={i * 0.1}>
+                  <div className="grid md:grid-cols-[minmax(0,10rem)_1fr] gap-2 md:gap-10 py-8 border-t border-ink/12 last:border-b">
+                    <span className="font-display font-bold tracking-tight text-2xl text-accent">{step.year}</span>
+                    <div>
+                      <h3 className="font-display font-semibold tracking-tight text-xl mb-2">{step.h}</h3>
+                      <p className="text-ink-soft leading-relaxed max-w-[52ch]">{step.d}</p>
+                    </div>
                   </div>
-                  <p className="text-ink-soft mt-3 max-w-[18ch]">{st.l}</p>
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Commitment / mission */}
+        <section className="py-[clamp(4rem,10vw,7rem)] bg-band text-band-ink">
+          <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
+            <Reveal>
+              <span className="eyebrow eyebrow--bare mb-6" style={{ color: 'var(--color-band-accent)' }}>
+                /{isFr ? 'Notre engagement' : 'Our commitment'}
+              </span>
+              <p className="font-display font-semibold tracking-tight leading-[1.05] text-[clamp(1.8rem,4.5vw,3.2rem)] max-w-[24ch] text-balance">
+                {isFr ? (
+                  <>Faire voyager vos marchandises par les airs avec la même exigence, du simple colis à l'expédition la plus sensible — <span className="font-serif italic font-normal text-band-sand">à chaque étape.</span></>
+                ) : (
+                  <>Flying your goods with the same care, from a single parcel to your most sensitive shipment — <span className="font-serif italic font-normal text-band-sand">at every step.</span></>
+                )}
+              </p>
+            </Reveal>
           </div>
         </section>
 
